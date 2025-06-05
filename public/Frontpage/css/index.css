@@ -1,0 +1,62 @@
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 150px;
+}
+
+.section {
+    scroll-margin-top: 100px;
+    /* Adjust as needed */
+}
+
+.carousel-nav-btn {
+    background: none;
+    border: none;
+    font-size: 2rem;
+}
+
+.pagination-dots .dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: #1a1a1a;
+    border-radius: 50%;
+    margin: 0 5px;
+}
+
+.pagination-dots .active {
+    background: rgb(206, 90, 37);
+}
+
+.social-icon {
+    color: #e77b39;
+}
+
+.suggestions-list {
+    position: absolute;
+    width: 100%;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-top: none;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+.suggestions-list li {
+    padding: 8px;
+    cursor: pointer;
+}
+
+.suggestions-list li:hover {
+    background-color: #f0f0f0;
+}
+
+html,
+body {
+    overflow-x: hidden;
+}
+
+#carouselExampleIndicators2 {
+    padding: 0;
+    margin: 0;
+}

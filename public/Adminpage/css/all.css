@@ -1,0 +1,139 @@
+.nav p {
+    color: rgb(46, 46, 46);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.nav p.nav-link.active {
+    color: rgb(252, 252, 252);
+}
+
+.sidebar-dark-light .nav-sidebar>.nav-item>.nav-link.active,
+.sidebar-light-light .nav-sidebar>.nav-item>.nav-link.active {
+    background-color: #ffcfa8;
+}
+
+
+.logo-circle {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding-left: 2px;
+}
+
+.rounded-circle {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border: 3px solid transparent;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    transform: scale(0.95);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logo-title {
+    font-size: 1.26rem;
+    font-weight: 700;
+    color: #333;
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.logo-responsive {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding-left: 2px;
+}
+
+.logo-responsive {
+    display: none;
+}
+
+.sidebar-collapse .logo-circle {
+    display: none;
+}
+
+.sidebar-collapse .logo-responsive {
+    display: block;
+}
+
+.sidebar-collapse .logo-title {
+    display: none;
+}
+
+.card-header {
+    background-color: rgb(92 108 117);
+    color: white;
+}
+
+[class*=sidebar-light-] .sidebar a {
+    color: #ff8e2a
+}
+
+.sidebar-dark-light .nav-sidebar>.nav-item>.nav-link.active,
+.sidebar-light-light .nav-sidebar>.nav-item>.nav-link.active {
+    background-color: rgb(235 159 69);
+}
+
+.sidebar-dark-light .nav-sidebar>.nav-item>.nav-link.active,
+.sidebar-light-light .nav-sidebar>.nav-item>.nav-link.active {
+    color: white;
+}
+
+.small-badge {
+    font-size: 0.6rem;
+    padding: 2px 5px;
+}
+
+
+
+.fa-circle:before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f0da";
+    font-weight: 900;
+    color: rgb(235, 156, 95);
+}
+
+.nav-sidebar .nav-header {
+    font-size: 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#sidebar-text {
+    font-weight: 400;
+    font-family: unset;
+
+}
+
+.nav-sidebar .nav-link.active,
+.nav-sidebar .nav-link.active p {
+    color: white !important;
+}
+
+[class*=sidebar-light-] .nav-treeview>.nav-item>.nav-link.active,
+[class*=sidebar-light-] .nav-treeview>.nav-item>.nav-link.active:hover {
+    background-color: rgb(135 116 93);
+}
+
+.nav-header {
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 14px !important;
+}
+
+.sidebar {
+    max-height: calc(100vh - 50px);
+    /* Adjust height as needed */
+    overflow-y: auto;
+}
+
+.os-theme-light>.os-scrollbar>.os-scrollbar-track>.os-scrollbar-handle {
+    background-color: #71b6cb !important;
+}

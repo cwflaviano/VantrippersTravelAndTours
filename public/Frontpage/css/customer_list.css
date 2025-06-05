@@ -1,0 +1,466 @@
+.logo-circle {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding-left: 2px;
+}
+
+.rounded-circle {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border: 3px solid transparent;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    transform: scale(0.95);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logo-title {
+    font-size: 1.26rem;
+    font-weight: 700;
+    color: #333;
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.logo-responsive {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding-left: 2px;
+}
+
+.logo-responsive {
+    display: none;
+}
+
+.sidebar-collapse .logo-circle {
+    display: none;
+}
+
+.sidebar-collapse .logo-responsive {
+    display: block;
+}
+
+.sidebar-collapse .logo-title {
+    display: none;
+}
+
+.card-header {
+    background-color: rgb(92 108 117);
+    color: white;
+}
+
+[class*=sidebar-light-] .sidebar a {
+    color: #ff8e2a
+}
+
+.sidebar-dark-light .nav-sidebar>.nav-item>.nav-link.active,
+.sidebar-light-light .nav-sidebar>.nav-item>.nav-link.active {
+    background-color: rgb(235 159 69);
+}
+
+.sidebar-dark-light .nav-sidebar>.nav-item>.nav-link.active,
+.sidebar-light-light .nav-sidebar>.nav-item>.nav-link.active {
+    color: white;
+}
+
+.small-badge {
+    font-size: 0.6rem;
+    padding: 2px 5px;
+}
+
+.customer-item {
+    background-color: #fff;
+    transition: all 0.2s ease;
+}
+
+.customer-item:hover {
+    background-color: #f8f9fa;
+}
+
+.customer-item.active {
+    background-color: #f0f7ff;
+    border-left: 3px solid rgba(21, 21, 21, 0.58);
+}
+
+.hover-shadow:hover {
+    box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075);
+}
+
+.transition {
+    transition: all 0.2s ease-in-out;
+}
+
+/* hide the scrollbar and prevent manual resizing */
+.auto-adjust {
+    overflow: hidden;
+    resize: none;
+}
+
+
+.payment-card {
+    width: 100%;
+    color: black;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.payment-body {
+    padding: 20px;
+}
+
+.amount-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.amount-due {
+    background-color: rgb(243, 247, 251);
+    padding: 15px 20px;
+    font-weight: 500;
+}
+
+.currency {
+    color: #0d6efd;
+    font-weight: bold;
+}
+
+.modal-content {
+    background-color: #ffffff;
+    /* White modal background */
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.email-header {
+    background-color: #ffffff;
+    /* White header background */
+    color: #333333;
+    /* Dark text for contrast */
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e0e0e0;
+    /* Subtle border */
+}
+
+.email-body {
+    background-color: #ffffff;
+    /* White body background */
+    color: #333333;
+    /* Dark text */
+}
+
+.form-control,
+.form-select {
+    border-radius: 4px;
+    border: 1px solid #d1d5db;
+    /* Light gray border */
+    background-color: #f9fafb;
+    /* Very light input background */
+    color: #333333;
+    /* Dark text for inputs */
+}
+
+.form-control:focus {
+    border-color: #3b82f6;
+    /* Blue focus border */
+    box-shadow: 0 0 0 0.2rem rgba(59, 130, 246, 0.25);
+    /* Blue focus shadow */
+}
+
+.email-form-group {
+    border-bottom: 1px solid #e0e0e0;
+    /* Light gray divider */
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+}
+
+.email-label {
+    width: 80px;
+    color: #4b5563;
+    /* Medium gray for labels */
+    font-weight: 500;
+}
+
+.email-footer {
+    background-color: #ffffff;
+    /* White footer background */
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #e0e0e0;
+    /* Light gray border */
+}
+
+.note-editor {
+    border-radius: 0 !important;
+    background-color: #ffffff;
+    /* White editor background */
+}
+
+.dropdown-button {
+    background: none;
+    border: none;
+    color: #3b82f6;
+    /* Blue for buttons */
+    cursor: pointer;
+}
+
+.dropdown-button:hover {
+    color: #2563eb;
+    /* Darker blue on hover */
+}
+
+.summernote-container {
+    min-height: 300px;
+}
+
+.sender-email {
+    color: #4b5563;
+    /* Medium gray for sender email */
+    max-width: 250px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.card-header {
+    background-color: rgb(232 234 235);
+    color: white;
+}
+
+
+/* 1) base positioning/context */
+.tooltip-css {
+    position: relative;
+    cursor: pointer;
+    /* indicate hoverable */
+}
+
+/* 2) hide default overflow so pseudo‑element can show */
+.tooltip-css::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    white-space: nowrap;
+    top: -0.5em;
+    /* tweak as needed */
+    left: 50%;
+    transform: translateX(-50%) translateY(-100%);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: .90rem;
+    background: rgba(0, 0, 0, 0.75);
+    color: #fff;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.15s ease-in-out;
+    z-index: 1000;
+}
+
+/* 3) show on hover */
+.tooltip-css:hover::after {
+    opacity: 1;
+}
+
+
+.app-container {
+    display: flex;
+    height: 100vh;
+}
+
+.customer-list {
+    background-color: #f8f9fa;
+    color: #212529;
+    width: 380px;
+    height: 100vh;
+    overflow-y: auto;
+    flex-shrink: 0;
+    border-right: 1px solid #dee2e6;
+}
+
+.content-area {
+    flex-grow: 1;
+    background-color: #ffffff;
+    color: #212529;
+    overflow-y: auto;
+}
+
+.list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #dee2e6;
+    background-color: #f1f3f5;
+}
+
+.content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #dee2e6;
+    background-color: #f1f3f5;
+}
+
+.list-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.filter-bar {
+    display: flex;
+    padding: 0.5rem 1rem;
+    gap: 10px;
+    border-bottom: 1px solid #dee2e6;
+    background-color: #f8f9fa;
+    flex-wrap: wrap;
+}
+
+.customer-item {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #dee2e6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.customer-item:hover {
+    background-color: #e9ecef;
+    cursor: pointer;
+}
+
+.customer-item.active {
+    background-color: #e9ecef;
+    font-weight: 500;
+}
+
+.customer-footer {
+    position: sticky;
+    bottom: 0;
+    background-color: #f1f3f5;
+    padding: 0.75rem 1rem;
+    border-top: 1px solid #dee2e6;
+}
+
+.dropdown-toggle {
+    background-color: transparent;
+    border: 1px solid #ced4da;
+    color: #495057;
+}
+
+.add-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #0d6efd;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.tab-navigation {
+    border-bottom: 1px solid #dee2e6;
+    background-color: #f8f9fa;
+}
+
+.tab-navigation .nav-link {
+    color: #495057;
+    padding: 1rem;
+    border: none;
+}
+
+.tab-navigation .nav-link.active {
+    color: #0d6efd;
+    background-color: transparent;
+    border-bottom: 2px solid #0d6efd;
+    font-weight: 500;
+}
+
+.outstanding-amount {
+    text-align: right;
+    padding: 1rem;
+    background-color: #f8f9fa;
+}
+
+.outstanding-amount .label {
+    color: #dc3545;
+}
+
+.sales-section {
+    padding: 1rem;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.no-records {
+    padding: 5rem 1rem;
+    text-align: center;
+    color: #6c757d;
+}
+
+.activities-section {
+    padding: 1rem;
+}
+
+.activity-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.activity-item {
+    display: flex;
+    margin-bottom: 1.5rem;
+}
+
+.activity-icon {
+    width: 36px;
+    height: 36px;
+    background-color: #0d6efd;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+    flex-shrink: 0;
+}
+
+.activity-content {
+    flex-grow: 1;
+}
+
+.activity-date {
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+
+.activity-link {
+    color: #0d6efd;
+    text-decoration: none;
+}
+
+
+
+
+/*  */

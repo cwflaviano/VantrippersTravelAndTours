@@ -1,0 +1,69 @@
+
+.tour-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.card-img {
+    width: 430px;
+    height: 430px;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card-overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    border-radius: 0 0 10px 10px;
+    z-index: 2;
+    background: rgba(26, 26, 26, 0.678);
+    transition: opacity 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.tour-card:hover .card-overlay h4 {
+    opacity: 0;
+}
+
+.card-hover-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0);
+    border-radius: 10px;
+    transition: background 0.3s ease-in-out;
+    z-index: 1;
+}
+
+.hover-text {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.tour-card:hover .card-hover-overlay {
+    background: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+.tour-card:hover .hover-text {
+    opacity: 1;
+}
+
+.tour-card:hover .card-img {
+    transform: scale(1.05);
+}

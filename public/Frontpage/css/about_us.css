@@ -1,0 +1,123 @@
+/* about-us.css */
+
+.hero-section {
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top:     100px;
+}
+
+.hero-title {
+    font-family: Koulen;
+    color: rgb(245, 242, 242);
+    font-size: 96px;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin: 0;
+    margin-left: -1100px;
+    
+}
+.section-title1 {
+    font-family: Koulen;
+    color: #F9AD42;
+    font-size: 35px;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+.section-titleh2 {
+    font-family: poppins;
+    color: #df6951;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 10%;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+} 
+.section-titleh3 {
+    font-family: volkhov;
+    color: #181e4b;
+    font-size: 50px;
+    font-weight: 700;
+    letter-spacing: 0%;
+    line-height: 71.04px;
+    margin-bottom: 25px;
+}
+.travel-with-us p,
+.mission-box p,
+.vision-box p,
+.about-owner p {
+    margin: 2rem 1rem;
+    font-family: koulen;
+    font-size: 24px;
+    line-height: 1.6;
+    color: #000000;
+    font-weight: 400;
+    -webkit-text-stroke: thin;
+    text-align: justify;
+}
+.mission-box,
+.vision-box {
+    border-radius: 1px;
+    box-shadow:0 0 0 2px rgb(230, 222, 222), 8px 8px 0 0 rgb(139, 134, 134);
+}
+
+.icon-title {
+    display: flex;
+    justify-content: center;
+}
+
+.icon-title img {
+    width: 40px;
+    height: auto;
+    ;
+}
+.icon-title h3 {
+    color: #F9AD42;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-family: koulen;
+    font-size: 40px;
+    margin: 0;
+}
+
+.partners img {
+    height: 30px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* About Owner Section */
+.about-owner h3 {
+    color: #333;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.tour-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 200px;
+    gap: 15px;
+}
+
+.tour-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.tour-grid img:hover {
+    transform: scale(1.03);
+}
+
+.tour-grid .tall {
+    grid-row: span 2;
+}
+
