@@ -1,0 +1,65 @@
+ .nav p {
+    color: rgb(46, 46, 46);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.nav p.nav-link.active {
+    color: rgb(252, 252, 252);
+}
+
+.sidebar-dark-light .nav-sidebar>.nav-item>.nav-link.active,
+.sidebar-light-light .nav-sidebar>.nav-item>.nav-link.active {
+    background-color: rgb(235 159 69);
+}
+
+
+
+
+
+
+ *{scrollbar-width: none !important;}
+
+.fa-circle:before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f0da";
+    font-weight: 900;
+    color: rgb(235, 156, 95);
+}
+
+.nav-sidebar .nav-header {
+    font-size: 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#sidebar-text {
+    font-weight: 400;
+    font-family: unset;
+
+}
+
+.nav-sidebar .nav-link.active,
+.nav-sidebar .nav-link.active p {
+    color: white !important;
+}
+
+[class*=sidebar-light-] .nav-treeview>.nav-item>.nav-link.active,
+[class*=sidebar-light-] .nav-treeview>.nav-item>.nav-link.active:hover {
+    background-color: rgb(135 116 93);
+}
+
+.nav-header {
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 14px !important;
+}
+
+.sidebar {
+    max-height: calc(100vh - 50px);
+    /* Adjust height as needed */
+    overflow-y: auto;
+}
+
+.os-theme-light>.os-scrollbar>.os-scrollbar-track>.os-scrollbar-handle {
+    background-color: #71b6cb !important;
+    display: none;
+}

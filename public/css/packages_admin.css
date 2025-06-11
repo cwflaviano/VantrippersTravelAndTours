@@ -1,0 +1,524 @@
+/* ==========================================================================
+   CSS VARIABLES
+   ========================================================================== */
+:root {
+    --primary-color: #ff8e2a;
+    --primary-dark: #e67e16;
+    --primary-darker: #cc6914;
+    --border-color: #d2d6de;
+    --text-color: #333;
+    --light-bg: #f9f9f9;
+    --white: #fff;
+    --shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    --shadow-hover: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    --border-radius: 8px;
+}
+
+/* ==========================================================================
+   ADMIN SPECIFIC SCOPING - Prevent conflicts with tour.css
+   ========================================================================== */
+.content-wrapper {
+    background-color: #f4f4f4;
+}
+
+.content-wrapper .content-header {
+    padding: 15px;
+    margin: 0 0 20px 0;
+}
+
+.content-wrapper .content-header h1 {
+    margin: 0;
+    font-size: 24px;
+    color: var(--text-color);
+}
+
+/* ==========================================================================
+   FORMS
+   ========================================================================== */
+.content-wrapper .required-field:after {
+    content: " *";
+    color: #dd4b39;
+    font-weight: bold;
+}
+
+.content-wrapper .form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(255, 142, 42, .6);
+}
+
+/* ==========================================================================
+   NAVIGATION TABS
+   ========================================================================== */
+.content-wrapper .nav-tabs {
+    border-bottom: 2px solid #dee2e6;
+    margin-bottom: 20px;
+}
+
+.content-wrapper .nav-tabs .nav-link {
+    border: none;
+    color: #495057;
+    font-weight: 500;
+    padding: 12px 20px;
+    border-bottom: 3px solid transparent;
+}
+
+.content-wrapper .nav-tabs .nav-link:hover,
+.content-wrapper .nav-tabs .nav-link.active {
+    border-color: transparent transparent var(--primary-color);
+    color: var(--primary-color);
+    background: none;
+}
+
+.content-wrapper .nav-tabs .nav-link.active {
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   FILTER SECTION
+   ========================================================================== */
+.content-wrapper .filter-section {
+    background: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow);
+}
+
+.content-wrapper .filter-section label {
+    color: #555;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+/* ==========================================================================
+   PACKAGE CARDS CONTAINER - FIXED GRID LAYOUT
+   ========================================================================== */
+.content-wrapper .package-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    max-height: 70vh;
+    overflow-y: auto;
+    padding: 10px;
+    margin-bottom: 30px;
+}
+
+/* Custom scrollbar for the container */
+.content-wrapper .package-cards-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.content-wrapper .package-cards-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.content-wrapper .package-cards-container::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 4px;
+}
+
+.content-wrapper .package-cards-container::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-dark);
+}
+
+/* ==========================================================================
+   PACKAGE CARDS - EQUAL HEIGHT AND SIZE
+   ========================================================================== */
+.content-wrapper .package-card {
+    background: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    /* Fixed height for all cards */
+    overflow: hidden;
+}
+
+.content-wrapper .package-card:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-2px);
+}
+
+.content-wrapper .package-header {
+    padding: 15px;
+    border-bottom: 1px solid #f0f0f0;
+    background: linear-gradient(135deg, rgba(255, 142, 42, 0.05), var(--white));
+    min-height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.content-wrapper .package-header h5 {
+    margin: 0 0 5px 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-color);
+    line-height: 1.3;
+    /* Truncate long titles */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.content-wrapper .package-header small {
+    color: #666;
+    font-size: 12px;
+}
+
+.content-wrapper .package-body {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow: hidden;
+}
+
+.content-wrapper .package-actions {
+    margin-top: auto;
+    padding-top: 10px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.content-wrapper .package-actions .btn-group {
+    display: flex;
+    gap: 3px;
+    width: 100%;
+}
+
+.content-wrapper .package-actions .btn {
+    font-size: 11px;
+    padding: 6px 8px;
+    flex: 1;
+    border-radius: 4px;
+}
+
+/* ==========================================================================
+   PACKAGE PRICE DISPLAY
+   ========================================================================== */
+.content-wrapper .package-price {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 8px;
+}
+
+/* ==========================================================================
+   DESTINATION BADGES - IMPROVED FOR MULTIPLE DESTINATIONS
+   ========================================================================== */
+.content-wrapper .destinations-info {
+    margin-bottom: 10px;
+    max-height: 60px;
+    overflow-y: auto;
+}
+
+.content-wrapper .destinations-info::-webkit-scrollbar {
+    width: 4px;
+}
+
+.content-wrapper .destinations-info::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.content-wrapper .destinations-info::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 2px;
+}
+
+.content-wrapper .combined-destinations {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: 6px;
+}
+
+.content-wrapper .destination-badge {
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 2px 6px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 80px;
+    display: inline-block;
+}
+
+.content-wrapper .single-destination {
+    background: #e8f4fd;
+    color: #1976d2;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 500;
+    display: inline-block;
+}
+
+/* ==========================================================================
+   PACKAGE INFO SECTIONS
+   ========================================================================== */
+.content-wrapper .package-info-section {
+    margin-bottom: 10px;
+    font-size: 12px;
+    color: #666;
+}
+
+.content-wrapper .package-info-section strong {
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.content-wrapper .pricing-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.content-wrapper .created-date {
+    font-size: 11px;
+    color: #999;
+    margin-top: auto;
+    padding-top: 8px;
+}
+
+/* ==========================================================================
+   STATUS BADGES
+   ========================================================================== */
+.content-wrapper .status-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 2;
+}
+
+.content-wrapper .package-card {
+    position: relative;
+}
+
+/* ==========================================================================
+   PRICING OPTIONS
+   ========================================================================== */
+.content-wrapper .pricing-option,
+.content-wrapper .pricing-card {
+    background: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 15px;
+    margin-bottom: 12px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.content-wrapper .pricing-option:first-child,
+.content-wrapper .pricing-card.default {
+    border-color: var(--primary-color);
+    background: linear-gradient(135deg, rgba(255, 142, 42, 0.05), var(--white));
+}
+
+.content-wrapper .pricing-option:first-child::before,
+.content-wrapper .pricing-card.default::before {
+    content: 'Default';
+    position: absolute;
+    top: -6px;
+    left: 12px;
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   BUTTONS
+   ========================================================================== */
+.content-wrapper .btn {
+    border-radius: 6px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.content-wrapper .btn-primary {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    border: none;
+    color: var(--white);
+}
+
+.content-wrapper .btn-primary:hover {
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary-darker));
+    color: var(--white);
+}
+
+.content-wrapper .btn-primary:focus {
+    box-shadow: 0 0 0 0.2rem rgba(255, 142, 42, 0.5);
+}
+
+/* ==========================================================================
+   MODAL & TABLES
+   ========================================================================== */
+.content-wrapper .modal-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: var(--white);
+    border-bottom: none;
+}
+
+.content-wrapper .modal-header .modal-title {
+    font-weight: 600;
+}
+
+.content-wrapper .modal-header .close {
+    color: var(--white);
+    opacity: 0.8;
+}
+
+.content-wrapper .table thead th {
+    border-bottom: 2px solid var(--primary-color);
+    color: var(--text-color);
+    font-weight: 600;
+    background: var(--light-bg);
+}
+
+.content-wrapper .table tbody tr:hover {
+    background-color: #f5f5f5;
+}
+
+/* ==========================================================================
+   ALERTS & BADGES
+   ========================================================================== */
+.content-wrapper .alert {
+    border: none;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+.content-wrapper .alert-success {
+    background: #dff0d8;
+    color: #3c763d;
+    border-left: 4px solid #5cb85c;
+}
+
+.content-wrapper .alert-info {
+    background: #d9edf7;
+    color: #31708f;
+    border-left: 4px solid #5bc0de;
+}
+
+.content-wrapper .alert-warning {
+    background: #fcf8e3;
+    color: #8a6d3b;
+    border-left: 4px solid #f0ad4e;
+}
+
+.content-wrapper .alert-danger {
+    background: #f2dede;
+    color: #a94442;
+    border-left: 4px solid #d9534f;
+}
+
+.content-wrapper .badge-primary {
+    background-color: var(--primary-color);
+}
+
+.content-wrapper .badge-success {
+    background-color: #5cb85c;
+}
+
+.content-wrapper .badge-info {
+    background-color: #5bc0de;
+}
+
+.content-wrapper .badge-warning {
+    background-color: #f0ad4e;
+}
+
+.content-wrapper .badge-danger {
+    background-color: #d9534f;
+}
+
+.content-wrapper .badge-secondary {
+    background-color: #6c757d;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
+@media (min-width: 1400px) {
+    .content-wrapper .package-cards-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1399px) {
+    .content-wrapper .package-cards-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+    .content-wrapper .package-cards-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .content-wrapper .package-card {
+        height: 380px;
+    }
+}
+
+@media (max-width: 767px) {
+    .content-wrapper .package-cards-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        max-height: 60vh;
+    }
+
+    .content-wrapper .package-card {
+        height: 350px;
+    }
+
+    .content-wrapper .filter-section,
+    .content-wrapper .card-body {
+        padding: 15px;
+    }
+
+    .content-wrapper .package-actions .btn-group {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .content-wrapper .package-actions .btn {
+        margin-bottom: 0;
+        border-radius: 6px !important;
+    }
+}
+
+@media (max-width: 576px) {
+
+    .content-wrapper .filter-section,
+    .content-wrapper .card-body {
+        padding: 12px;
+    }
+
+    .content-wrapper .package-card {
+        height: 330px;
+    }
+
+    .content-wrapper .package-header {
+        min-height: 70px;
+        padding: 12px;
+    }
+
+    .content-wrapper .package-body {
+        padding: 12px;
+    }
+}

@@ -1,0 +1,312 @@
+/* ==========================================================================
+   FRONTEND TOUR PACKAGES ONLY - Scoped to prevent admin conflicts
+   ========================================================================== */
+
+/* Main container for tour package pages only */
+body:not(.admin-page) .packages-container {
+    .front-page {
+        width: 100%;
+        background: url('/vantrippers/uploads/bicol/raw/18F2AE0E-BEB8-4C5B-87EB-ABCF0FC1D23F.jpg');
+        background-position: center;
+        background-size: cover;
+        height: 80vh;
+        position: relative;
+
+        h1 {
+            width: 90%;
+            color: white;
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            font-size: 5rem;
+            transform: translateX(-50%);
+        }
+    }
+
+    .container-package {
+        width: 90%;
+        margin: auto;
+        background: #f5f5f5;
+        position: relative;
+        top: -5rem;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+
+        .tab-container {
+            button {
+                background: none;
+                padding: 30px 50px;
+                font-weight: 500;
+                border: none;
+            }
+
+            button.active {
+                background: white;
+            }
+        }
+
+        .packages-block {
+            background: white;
+            padding: 30px;
+
+            .package {
+                margin-bottom: 30px;
+                display: flex;
+                align-items: center;
+                gap: 50px;
+
+                .code-rate {
+                    display: flex;
+                    align-items: start;
+                    gap: 10px;
+                }
+
+                /* Simplified package actions container */
+                .package-actions {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 15px;
+                    align-items: flex-end;
+                }
+
+                .package-price {
+                    font-size: 2rem;
+
+                    .price {
+                        color: #ff8e2a;
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                    }
+
+                    span {
+                        font-size: 1.5rem;
+                        color: #7D7D7D;
+                    }
+
+                    .slash {
+                        font-size: 3rem;
+                    }
+                }
+            }
+
+            h4 {
+                color: #070707;
+            }
+
+            .packages-information {
+                padding: 20px 0;
+
+                p {
+                    margin: 0;
+                    padding-left: 20px;
+                }
+            }
+
+            /* Package content styling for Summernote content */
+            .package-content {
+                padding-left: 20px;
+                line-height: 1.6;
+
+                /* Reset margins for lists */
+                ul,
+                ol {
+                    margin: 10px 0;
+                    padding-left: 40px;
+                }
+
+                li {
+                    margin: 5px 0;
+                }
+
+                /* Headings styling */
+                h1,
+                h2,
+                h3,
+                h4,
+                h5,
+                h6 {
+                    margin: 15px 0 10px 0;
+                    color: #333;
+                }
+
+                /* Paragraph spacing */
+                p {
+                    margin: 10px 0;
+                    padding-left: 0;
+                }
+
+                /* Bold and italic text */
+                strong,
+                b {
+                    font-weight: bold;
+                }
+
+                em,
+                i {
+                    font-style: italic;
+                }
+
+                /* Links styling */
+                a {
+                    color: #ff8e2a;
+                    text-decoration: none;
+                }
+
+                a:hover {
+                    text-decoration: underline;
+                }
+
+                /* Tables styling */
+                table {
+                    width: 100%;
+                    border-collapse: collapse;
+                    margin: 15px 0;
+                }
+
+                table th,
+                table td {
+                    border: 1px solid #ddd;
+                    padding: 8px;
+                    text-align: left;
+                }
+
+                table th {
+                    background-color: #f8f9fa;
+                    font-weight: bold;
+                }
+
+                /* Blockquotes */
+                blockquote {
+                    border-left: 4px solid #ff8e2a;
+                    margin: 15px 0;
+                    padding: 10px 20px;
+                    background-color: #f8f9fa;
+                    font-style: italic;
+                }
+
+                /* Code blocks */
+                code {
+                    background-color: #f1f1f1;
+                    padding: 2px 4px;
+                    border-radius: 3px;
+                }
+
+                pre {
+                    background-color: #f8f9fa;
+                    border: 1px solid #ddd;
+                    border-radius: 4px;
+                    padding: 10px;
+                    overflow-x: auto;
+                    margin: 15px 0;
+                }
+
+                /* Images */
+                img {
+                    max-width: 100%;
+                    height: auto;
+                    margin: 10px 0;
+                    border-radius: 4px;
+                }
+            }
+
+            .gallery {
+                margin-top: 30px;
+
+                h1 {
+                    font-size: 3rem;
+                    color: #181E4B;
+                }
+
+                .img-container {
+                    width: 50%;
+                    display: flex;
+                    align-items: center;
+                    flex-direction: column;
+                    gap: 30px;
+
+                    .img-block {
+                        display: flex;
+                        gap: 20px;
+                        flex-wrap: wrap;
+
+                        img {
+                            width: 200px;
+                            height: 200px;
+                            object-fit: cover;
+                        }
+                    }
+
+                    button {
+                        background: none;
+                        border: none;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* FRONTEND BOOKING CTA */
+body:not(.admin-page) .booking-cta {
+    background: linear-gradient(135deg, #ff8e2a, #fb9339);
+    color: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    margin: 30px 0;
+}
+
+body:not(.admin-page) .contact-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+body:not(.admin-page) .contact-buttons .btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+body:not(.admin-page) .contact-buttons .btn-primary {
+    background: white;
+    color: #ff8e2a;
+    border: 2px solid white;
+}
+
+body:not(.admin-page) .contact-buttons .btn-success {
+    background: #28a745;
+    color: white;
+    border: 2px solid #28a745;
+}
+
+/* FRONTEND RESPONSIVE */
+@media (max-width: 768px) {
+    body:not(.admin-page) .packages-container .container-package .packages-block .package {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    body:not(.admin-page) .packages-container .container-package .packages-block .package .package-actions {
+        align-items: center;
+        width: 100%;
+    }
+
+    body:not(.admin-page) .contact-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    body:not(.admin-page) .packages-container .front-page h1 {
+        font-size: 3rem;
+    }
+
+    body:not(.admin-page) .packages-container .container-package .packages-block .gallery .img-container {
+        width: 100%;
+    }
+}

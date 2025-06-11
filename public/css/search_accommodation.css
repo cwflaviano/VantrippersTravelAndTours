@@ -1,0 +1,55 @@
+
+
+.sidebar-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.hotel-card {
+    border: none;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.hotel-image {
+    height: 250px;
+    object-fit: cover;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.stars {
+    color: #ffc107;
+    font-size: 0.9rem;
+}
+
+.reserve-btn {
+    background-color: rgb(19, 71, 24);
+    color: white;
+    border: none;
+}
+
+.rating-badge {
+    background-color: rgb(232, 219, 102);
+    color: white;
+}
+
+/* Mobile Responsiveness Adjustments */
+@media (max-width: 768px) {
+    .hotel-card .card-title {
+        font-size: 1rem;
+    }
+
+    .hotel-image {
+        height: 200px;
+    }
+
+    .stars {
+        font-size: 0.8rem;
+    }
+
+    .card-body {
+        padding: 0.75rem;
+    }
+}

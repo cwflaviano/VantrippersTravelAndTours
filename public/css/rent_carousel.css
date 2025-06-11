@@ -1,0 +1,101 @@
+/* Carousel container styling */
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    padding: 0 50px;
+    margin-bottom: 20px;
+}
+
+/* Row styling for horizontal alignment */
+.carousel-container .row {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-right: -10px;
+    margin-left: -10px;
+    overflow: visible;
+    width: 100%;
+}
+
+/* Make each card column exactly 1/3 width for larger screens */
+.carousel-container .col-md-4 {
+    flex: 0 0 33.333%;
+    max-width: 33.333%;
+    padding: 0 10px;
+    transition: all 0.3s ease;
+}
+
+/* Ensure service cards have consistent styling */
+.service-card {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s;
+    margin-bottom: 0;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Navigation buttons styling */
+.carousel-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-nav-btn:hover {
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+.prev-btn {
+    left: 5px;
+}
+
+.next-btn {
+    right: 5px;
+}
+
+/* Pagination dots styling */
+.pagination-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dot.active {
+    background-color: #007bff;
+}
+
+/* Mobile view: display each card individually */
+@media (max-width: 991px) {
+    .carousel-container .row {
+        width: 100%;
+    }
+    
+    .carousel-container .col-md-4 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}

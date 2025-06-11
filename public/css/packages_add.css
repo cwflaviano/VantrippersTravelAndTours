@@ -1,0 +1,361 @@
+/* ==========================================================================
+   FOOTER LAYOUT FIXES - Remove gap between sidebar and footer
+   ========================================================================== */
+
+/* Fix the footer positioning to eliminate gaps */
+.main-footer {
+    position: fixed !important;
+    bottom: 0 !important;
+    left: 250px !important;
+    /* Default sidebar width */
+    right: 0 !important;
+    z-index: 1000 !important;
+    background: #fff !important;
+    border-top: 1px solid #dee2e6 !important;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1) !important;
+    margin: 0 !important;
+    /* Remove any default margins */
+    padding: 10px 15px !important;
+    height: auto !important;
+    min-height: 60px !important;
+}
+
+/* Adjust footer when sidebar is collapsed */
+body.sidebar-collapse .main-footer {
+    left: 60px !important;
+    /* Collapsed sidebar width */
+    transition: left 0.3s ease-in-out !important;
+}
+
+/* Mobile responsive footer */
+@media (max-width: 767.98px) {
+    .main-footer {
+        left: 0 !important;
+    }
+
+    body.sidebar-collapse .main-footer {
+        left: 0 !important;
+    }
+}
+
+/* Add bottom padding to content to prevent footer overlap */
+.content-wrapper {
+    padding-bottom: 80px !important;
+    margin-bottom: 0 !important;
+}
+
+/* Remove any potential margin/padding causing gaps */
+.wrapper {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* ==========================================================================
+   SUMMERNOTE TOOLBAR FIXES - Properly arrange editor tools
+   ========================================================================== */
+
+/* Fix Summernote container and toolbar layout */
+.summernote-container {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 15px;
+}
+
+/* Summernote editor wrapper */
+.note-editor {
+    border: 1px solid #d2d6de !important;
+    border-radius: 8px !important;
+    overflow: hidden !important;
+}
+
+/* Toolbar styling and arrangement */
+.note-toolbar {
+    background: #f8f9fa !important;
+    border-bottom: 1px solid #d2d6de !important;
+    border-radius: 8px 8px 0 0 !important;
+    padding: 8px 10px !important;
+    min-height: auto !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 4px !important;
+    align-items: center !important;
+}
+
+/* Button groups in toolbar */
+.note-btn-group {
+    display: inline-flex !important;
+    flex-wrap: nowrap !important;
+    margin: 2px !important;
+    background: #ffffff !important;
+    border: 1px solid #dee2e6 !important;
+    border-radius: 4px !important;
+    overflow: hidden !important;
+}
+
+/* Individual toolbar buttons */
+.note-btn {
+    border: none !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+    padding: 6px 8px !important;
+    background: transparent !important;
+    color: #495057 !important;
+    font-size: 14px !important;
+    line-height: 1 !important;
+    min-width: 32px !important;
+    height: 32px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: all 0.2s ease !important;
+    border-right: 1px solid #dee2e6 !important;
+}
+
+.note-btn:last-child {
+    border-right: none !important;
+}
+
+.note-btn:hover {
+    background: var(--primary-color, #ff8e2a) !important;
+    color: white !important;
+}
+
+.note-btn.active {
+    background: var(--primary-color, #ff8e2a) !important;
+    color: white !important;
+}
+
+/* Dropdown buttons */
+.note-btn.dropdown-toggle::after {
+    margin-left: 4px !important;
+    font-size: 10px !important;
+}
+
+/* Color buttons */
+.note-btn .note-recent-color {
+    width: 16px !important;
+    height: 16px !important;
+    border: 1px solid #ccc !important;
+    border-radius: 2px !important;
+}
+
+/* Font and color panels */
+.note-color .note-palette {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 2px !important;
+    padding: 8px !important;
+}
+
+.note-color .note-palette .note-color-btn {
+    width: 20px !important;
+    height: 20px !important;
+    border: 1px solid #ddd !important;
+    border-radius: 3px !important;
+    cursor: pointer !important;
+    transition: transform 0.1s ease !important;
+}
+
+.note-color .note-palette .note-color-btn:hover {
+    transform: scale(1.1) !important;
+    border-color: #999 !important;
+}
+
+/* Dropdown menus */
+.note-dropdown-menu {
+    border: 1px solid #d2d6de !important;
+    border-radius: 6px !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+    background: white !important;
+    padding: 4px 0 !important;
+    margin-top: 2px !important;
+    min-width: 160px !important;
+    z-index: 1050 !important;
+}
+
+.note-dropdown-item {
+    padding: 8px 16px !important;
+    color: #495057 !important;
+    text-decoration: none !important;
+    display: block !important;
+    transition: background-color 0.2s ease !important;
+}
+
+.note-dropdown-item:hover {
+    background: var(--primary-color, #ff8e2a) !important;
+    color: white !important;
+}
+
+/* Style dropdown */
+.note-style .dropdown-style {
+    min-width: 140px !important;
+}
+
+.note-style .dropdown-style h1,
+.note-style .dropdown-style h2,
+.note-style .dropdown-style h3,
+.note-style .dropdown-style h4,
+.note-style .dropdown-style h5,
+.note-style .dropdown-style h6 {
+    margin: 0 !important;
+    padding: 4px 0 !important;
+}
+
+/* Font name dropdown */
+.note-fontname .dropdown-fontname {
+    min-width: 140px !important;
+    max-height: 300px !important;
+    overflow-y: auto !important;
+}
+
+/* Editor content area */
+.note-editing-area {
+    border: none !important;
+    background: white !important;
+}
+
+.note-editable {
+    padding: 15px !important;
+    min-height: 200px !important;
+    max-height: 400px !important;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif !important;
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+    color: #333 !important;
+    overflow-y: auto !important;
+    border: none !important;
+    outline: none !important;
+}
+
+.note-editable:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* Status bar */
+.note-status-output {
+    background: #f8f9fa !important;
+    border-top: 1px solid #d2d6de !important;
+    font-size: 12px !important;
+    color: #6c757d !important;
+    padding: 6px 10px !important;
+    border-radius: 0 0 8px 8px !important;
+}
+
+/* Modal styling for popups */
+.note-modal .modal-header {
+    background: var(--primary-color, #ff8e2a) !important;
+    color: white !important;
+    border-radius: 8px 8px 0 0 !important;
+}
+
+.note-modal .modal-content {
+    border-radius: 8px !important;
+    border: none !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) !important;
+}
+
+.note-modal .modal-body {
+    padding: 20px !important;
+}
+
+.note-modal .modal-footer {
+    border-top: 1px solid #dee2e6 !important;
+    padding: 15px 20px !important;
+}
+
+/* Responsive toolbar for mobile */
+@media (max-width: 768px) {
+    .note-toolbar {
+        padding: 6px 8px !important;
+        gap: 2px !important;
+    }
+
+    .note-btn-group {
+        margin: 1px !important;
+    }
+
+    .note-btn {
+        padding: 5px 6px !important;
+        font-size: 12px !important;
+        min-width: 28px !important;
+        height: 28px !important;
+    }
+
+    .note-editable {
+        padding: 12px !important;
+        min-height: 150px !important;
+        font-size: 13px !important;
+    }
+
+    /* Stack button groups vertically on very small screens */
+    @media (max-width: 480px) {
+        .note-toolbar {
+            flex-direction: column !important;
+            align-items: stretch !important;
+        }
+
+        .note-btn-group {
+            width: 100% !important;
+            justify-content: center !important;
+            margin: 2px 0 !important;
+        }
+    }
+}
+
+/* Fix for overlapping elements */
+.note-popover,
+.note-dropdown-menu {
+    z-index: 1060 !important;
+}
+
+/* Ensure proper focus states */
+.note-editor.note-frame.codeview .note-editable {
+    display: none !important;
+}
+
+.note-editor.note-frame.codeview .note-codable {
+    display: block !important;
+    background: #f8f9fa !important;
+    border: none !important;
+    font-family: 'Monaco', 'Consolas', 'Courier New', monospace !important;
+    font-size: 13px !important;
+    padding: 15px !important;
+    color: #333 !important;
+    resize: vertical !important;
+    min-height: 200px !important;
+}
+
+/* Loading state for editor */
+.summernote-container.loading::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+/* ==========================================================================
+   ADDITIONAL LAYOUT IMPROVEMENTS
+   ========================================================================== */
+
+/* Ensure sidebar doesn't interfere with footer */
+.main-sidebar {
+    z-index: 999 !important;
+}
+
+/* Fix any potential content overflow */
+.content-wrapper {
+    overflow-x: hidden !important;
+}
+
+/* Remove any unwanted scrollbars */
+body {
+    overflow-x: hidden !important;
+}

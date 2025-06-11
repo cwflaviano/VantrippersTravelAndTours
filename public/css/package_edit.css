@@ -1,0 +1,510 @@
+/* Edit Package CSS Styles */
+
+/* Layout Structure - Fixed Footer at Bottom */
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.content-wrapper {
+    flex: 1;
+    padding-bottom: 20px;
+    overflow-x: hidden;
+}
+
+.main-footer {
+    position: sticky;
+    bottom: 0;
+    z-index: 1000;
+    background-color: #f4f4f4;
+    border-top: 1px solid #dee2e6;
+    margin-top: auto;
+}
+
+/* Content Section Spacing */
+.content {
+    padding-bottom: 20px;
+}
+
+/* Form Layout */
+.edit-package-form {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/* Required field indicator */
+.required-field::after {
+    content: " *";
+    color: #dc3545;
+    font-weight: bold;
+}
+
+/* Card Headers */
+.card-header {
+    background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
+    color: white;
+    border: none;
+    padding: 1rem 1.25rem;
+}
+
+.card-header h3 {
+    margin-bottom: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+/* Form Controls */
+.form-control {
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #495057;
+}
+
+/* Summernote Rich Text Editor Styling */
+.note-editor {
+    border: 1px solid #ced4da !important;
+    border-radius: 4px !important;
+    margin-bottom: 1rem;
+}
+
+.note-editor:focus-within {
+    border-color: #007bff !important;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25) !important;
+}
+
+.note-toolbar {
+    background-color: #f8f9fa !important;
+    border-bottom: 1px solid #e9ecef !important;
+    padding: 8px !important;
+}
+
+.note-editing-area {
+    background-color: white !important;
+}
+
+.note-editable {
+    min-height: 150px !important;
+    padding: 15px !important;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+}
+
+.note-editable:focus {
+    outline: none !important;
+}
+
+.note-btn {
+    background-color: transparent !important;
+    border: 1px solid transparent !important;
+    padding: 5px 8px !important;
+    margin: 2px !important;
+    border-radius: 3px !important;
+    transition: all 0.2s ease !important;
+}
+
+.note-btn:hover {
+    background-color: #e9ecef !important;
+    border-color: #dee2e6 !important;
+}
+
+.note-btn.active {
+    background-color: #007bff !important;
+    color: white !important;
+    border-color: #007bff !important;
+}
+
+.note-dropdown-menu {
+    border: 1px solid #dee2e6 !important;
+    border-radius: 4px !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Summernote Responsive */
+@media (max-width: 768px) {
+    .note-toolbar {
+        flex-wrap: wrap;
+    }
+
+    .note-btn-group {
+        margin-bottom: 5px;
+    }
+
+    .note-editable {
+        min-height: 120px !important;
+        padding: 10px !important;
+    }
+}
+
+/* Rich Text Form Groups Spacing */
+.form-group:has(.summernote-editor) {
+    margin-bottom: 2rem;
+}
+
+/* Package Type Radio Buttons */
+.form-check {
+    margin-bottom: 0.5rem;
+}
+
+.form-check-input:checked {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.form-check-label {
+    padding-left: 0.5rem;
+    cursor: pointer;
+}
+
+/* Destination Selection */
+.single-destination-wrapper,
+.combined-destinations-wrapper {
+    transition: all 0.3s ease;
+}
+
+.single-destination-wrapper.hidden {
+    display: none;
+}
+
+.combined-destinations-wrapper:not(.active) {
+    display: none;
+}
+
+/* Combined Destinations Styling */
+.combined-destinations {
+    border: 1px solid #e9ecef;
+    border-radius: 5px;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    margin-bottom: 1rem;
+}
+
+.destination-group {
+    margin-bottom: 1.5rem;
+}
+
+.destination-group:last-child {
+    margin-bottom: 0;
+}
+
+.destination-group h6 {
+    color: #495057;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.destination-item {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    border: 1px solid #e9ecef;
+    border-radius: 4px;
+    background-color: white;
+    transition: all 0.2s ease;
+}
+
+.destination-item:hover {
+    background-color: #f8f9fa;
+    border-color: #007bff;
+}
+
+.destination-item.selected {
+    background-color: #e3f2fd;
+    border-color: #007bff;
+}
+
+.destination-item input[type="checkbox"] {
+    margin-right: 0.75rem;
+    transform: scale(1.1);
+}
+
+.destination-item label {
+    flex: 1;
+    margin-bottom: 0;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.order-input {
+    width: 80px;
+    margin-left: 0.5rem;
+    display: none;
+}
+
+.destination-item.selected .order-input {
+    display: block;
+}
+
+/* Destination Counter */
+.destination-counter {
+    text-align: center;
+}
+
+.destination-counter:not(.active) {
+    display: none;
+}
+
+.destination-counter .badge {
+    font-size: 0.85rem;
+    padding: 0.5rem 0.75rem;
+}
+
+/* Custom Switch */
+.custom-switch .custom-control-label::before {
+    border-radius: 0.5rem;
+}
+
+.custom-switch .custom-control-label::after {
+    border-radius: 0.5rem;
+}
+
+.custom-switch .custom-control-input:checked~.custom-control-label::before {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+/* Buttons */
+.btn {
+    border-radius: 4px;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    transition: all 0.2s ease;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+    border: none;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #0056b3 0%, #004085 100%);
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background: linear-gradient(135deg, #6c757d 0%, #545b62 100%);
+    border: none;
+}
+
+.btn-secondary:hover {
+    background: linear-gradient(135deg, #545b62 0%, #3d4349 100%);
+    transform: translateY(-1px);
+}
+
+.btn-info {
+    background: linear-gradient(135deg, #17a2b8 0%, #117a8b 100%);
+    border: none;
+}
+
+.btn-info:hover {
+    background: linear-gradient(135deg, #117a8b 0%, #0c5460 100%);
+    transform: translateY(-1px);
+}
+
+/* Form Text */
+.form-text {
+    font-size: 0.875rem;
+    color: #6c757d;
+}
+
+/* Alert Messages */
+.alert {
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+/* Cards with proper spacing */
+.card {
+    margin-bottom: 1.5rem;
+    transition: box-shadow 0.2s ease;
+    border: 1px solid #e9ecef;
+}
+
+.card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card:last-child {
+    margin-bottom: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .card-body {
+        padding: 1rem;
+    }
+
+    .destination-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .destination-item label {
+        margin-bottom: 0.5rem;
+    }
+
+    .order-input {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 0.5rem;
+    }
+
+    .d-flex.justify-content-between {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .d-flex.justify-content-between>div {
+        display: flex;
+        gap: 0.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+
+    .row>.col-md-8,
+    .row>.col-md-4 {
+        margin-bottom: 1rem;
+    }
+
+    .card-header h3 {
+        font-size: 1rem;
+    }
+
+    .destination-group h6 {
+        font-size: 0.95rem;
+    }
+
+    .btn {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+
+    .d-flex.justify-content-between>div {
+        flex-direction: column;
+    }
+}
+
+/* Loading State */
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.btn .fas.fa-spinner {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Form Validation States */
+.form-control.is-invalid {
+    border-color: #dc3545;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%23dc3545' viewBox='0 0 12 12'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath d='m5.8 3.6.7.5'/%3e%3cpath d='M6.5 8.2v.01'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right calc(0.375em + 0.1875rem) center;
+    background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+}
+
+.form-control.is-valid {
+    border-color: #28a745;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath fill='%2328a745' d='m2.3 6.73.69.69c.25.25.66.25.91 0L8.4 2.91a.64.64 0 0 0 0-.91L7.71 1.3a.64.64 0 0 0-.91 0L3.58 4.52 1.4 2.34a.64.64 0 0 0-.91 0L.8 2.65a.64.64 0 0 0 0 .91z'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right calc(0.375em + 0.1875rem) center;
+    background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    background-color: transparent;
+    padding: 0;
+}
+
+.breadcrumb-item+.breadcrumb-item::before {
+    color: #6c757d;
+}
+
+.breadcrumb-item.active {
+    color: #6c757d;
+}
+
+/* Content Header */
+.content-header h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #495057;
+    margin-bottom: 0;
+}
+
+/* Sidebar Enhancement */
+.sidebar .logo-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #495057;
+}
+
+/* Focus States */
+textarea:focus,
+input:focus,
+select:focus {
+    outline: none;
+}
+
+/* Custom Select Styling */
+select.form-control {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 0.5rem center;
+    background-repeat: no-repeat;
+    background-size: 1.5em 1.5em;
+    padding-right: 2.5rem;
+}
+
+/* Ensure proper clearfix */
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Page structure fix */
+body.hold-transition {
+    overflow-x: hidden;
+}

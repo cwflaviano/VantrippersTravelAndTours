@@ -1,0 +1,233 @@
+/* 
+ * gallery_admin.css - matches the gallery-admin.php selectors
+ */
+
+:root {
+  --primary: #ff8e2a;
+  --secondary: rgb(117, 108, 92);
+  --active-nav: rgb(235, 159, 69);
+  --light-bg: #f8f9fa;
+  --border: #dee2e6;
+  --dark: #333;
+  --light: #6c757d;
+  --white: #fff;
+  --danger: #dc3545;
+  --success: #28a745;
+}
+
+/* Navigation Tabs - matches existing .nav-tabs structure */
+.nav-tabs .nav-link {
+  color: var(--dark);
+  padding: 10px 20px;
+  border-radius: 2px 2px 0 0;
+}
+
+.nav-tabs .nav-link:hover {
+  background-color: var(--light-bg);
+}
+
+.nav-tabs .nav-link.active {
+  font-weight: bold;
+  color: var(--primary);
+  background: none;
+}
+
+/* Gallery Styles - matches existing gallery-image-wrapper */
+.gallery-image-wrapper {
+  position: relative;
+  height: 150px;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+.gallery-image-wrapper:hover {
+  transform: translateY(-5px);
+}
+
+.gallery-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-controls {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.6);
+  padding: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-image-wrapper:hover .image-controls {
+  opacity: 1;
+}
+
+.image-controls .btn {
+  padding: 2px 8px;
+  font-size: 0.8rem;
+}
+
+.image-type-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 0.7rem;
+  border-radius: 12px;
+  padding: 3px 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Form styling */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-control:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 0.2rem rgba(255, 142, 42, 0.25);
+  outline: none;
+}
+
+.required-field:after {
+  content: " *";
+  color: red;
+}
+
+.custom-file-input:focus ~ .custom-file-label {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 0.2rem rgba(255, 142, 42, 0.25);
+}
+
+.custom-control-input:checked ~ .custom-control-label::before {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+/* Destination styling */
+.inactive-destination {
+  background-color: #f8f9fa;
+  color: #999;
+  font-style: italic;
+}
+
+/* Card styling enhancements */
+.card {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.card-header {
+  background-color: #ff8e2a;
+  color: white;
+  padding: 15px;
+  font-weight: 500;
+  border-bottom: 0;
+}
+
+.card-body {
+  padding: 15px;
+}
+
+/* Button enhancements */
+.btn-primary {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+.btn-primary:hover {
+  background-color: #e67d1c;
+  border-color: #e67d1c;
+}
+
+/* Modal styling */
+.modal-content {
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.modal-header {
+  background-color: var(--secondary);
+  color: white;
+  border-bottom: 0;
+}
+
+.modal-footer {
+  background-color: var(--light-bg);
+  border-top: 1px solid var(--border);
+}
+
+.close {
+  color: white;
+  opacity: 0.8;
+}
+
+.close:hover {
+  color: white;
+  opacity: 1;
+}
+
+/* Table styling */
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+.table-striped tbody tr:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Badge styling */
+.badge-info {
+  background-color: #17a2b8;
+}
+
+.badge-secondary {
+  background-color: #6c757d;
+}
+
+.badge-success {
+  background-color: #28a745;
+}
+
+.badge-warning {
+  background-color: #ffc107;
+  color: #212529;
+}
+
+/* Alert styling */
+.alert {
+  border-radius: 4px;
+  padding: 12px 15px;
+}
+
+.alert-dismissible .close {
+  color: inherit;
+  opacity: 0.8;
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+  .card-header .d-flex {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .card-header .btn-group {
+    margin-top: 10px;
+  }
+  
+  .card-header h3.card-title {
+    margin-bottom: 10px;
+  }
+}
