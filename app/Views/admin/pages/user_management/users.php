@@ -4,6 +4,7 @@
 
 <!-- css -->
 <?= $this->section('css') ?>
+<!-- custom css for this page -->
 <?= $this->endSection() ?>
 
 
@@ -31,12 +32,13 @@
         </script>
     <?php endif; ?>
 
+    <!-- content -->
     <div class="content-wrapper">
         <div class="content-header">
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Dashboard</h1>
+                        <h1 class="m-0">Users Management</h1>
                     </div>
                 </div>
             </div>
@@ -47,12 +49,9 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="card">
-                            <div class="card-header">
-                                Add New User
-                            </div>
 
                             <div class="card-body">
-                                <h1>Add New User
+                                <h1>Users
                                     <br>
                                 </h1>
 
@@ -130,8 +129,8 @@
                                                  <!-- getStatusBadge($user['status']) -->
                                                 </td>
                                                 <td>
-                                                    <a href="view_users.php?id=<?= $user['id'] ?>" class="btn btn-dark btn-sm"><i class="far fa-eye"></i> Show</a>
-                                                    <a href="edit_user.php?id=<?= $user['id'] ?>" class="btn btn-primary btn-sm"><i class="fas fa-pen"></i> Edit</a>
+                                                    <a href="<?= base_url('/admin/user-management/view/' . $user['id']) ?>" class="btn btn-dark btn-sm"><i class="far fa-eye"></i> Show</a>
+                                                    <a href="<?= base_url('/admin/user-management/edit/' . $user['id']) ?>" class="btn btn-primary btn-sm"><i class="fas fa-pen"></i> Edit</a>
                                                     <?php if ($user['user_archived'] == 0): ?>
                                                         <a href="user_archived.php?id=<?= htmlspecialchars($user['id']) ?>" class="btn btn-warning btn-sm">
                                                             <i class="fas fa-archive"></i> Archive
@@ -141,7 +140,6 @@
                                                             <i class="fas fa-undo"></i> Restore
                                                         </a>
                                                     <?php endif; ?>
-
 
                                                     <a href="delete_user.php?id=<?= $user['id'] ?>" class="btn btn-danger btn-sm delete-user">
                                                         <i class="fas fa-trash"></i> Delete
@@ -156,13 +154,14 @@
                         </div>
                     </div>
                 </div>
-
             </div>
+        </section>
+    </div>
 <?= $this->endSection() ?>
 
-<!-- modal -->
+<!-- modals -->
 <?= $this->section('modals') ?>
-    <?= $this->include('admin/pages/user_management/user_management_modals') ?>
+    <?= $this->include('admin/pages/user_management/create_user_modal') ?>
 <?= $this->endSection() ?>
 
 
@@ -170,24 +169,8 @@
 
 <!-- js -->
 <?= $this->section('js') ?>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-
-    <script src="<?= base_url('plugins/datatables/jquery.dataTables.min.js') ?>?v=<? time() ?>"></script>
-    <script src="<?= base_url('plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') ?>?v=<? time() ?>"></script>
-    <script src="<?= base_url('plugins/datatables-responsive/js/dataTables.responsive.min.js') ?>?v=<? time() ?>"></script>
-    <script src="<?= base_url('plugins/datatables-responsive/js/responsive.bootstrap4.min.js') ?>?v=<? time() ?>"></script>
-    <script src="<?= base_url('plugins/datatables-buttons/js/dataTables.buttons.min.js') ?>?v=<? time() ?>"></script>
-    <script src="<?= base_url('plugins/datatables-buttons/js/buttons.bootstrap4.min.js') ?>?v=<? time() ?>"></script>
-    <script src="<?= base_url('plugins/jszip/jszip.min.js') ?>?v=<? time() ?>"></script>
-    <script src="<?= base_url('plugins/pdfmake/pdfmake.min.js') ?>?v=<? time() ?>"></script>
-    <script src="<?= base_url('plugins/pdfmake/vfs_fonts.js') ?>?v=<? time() ?>"></script>
-    <script src="<?= base_url('plugins/datatables-buttons/js/buttons.html5.min.js') ?>?v=<? time() ?>"></script>
-    <script src="<?= base_url('plugins/datatables-buttons/js/buttons.print.min.js') ?>?v=<? time() ?>"></script>
-    <script src="<?= base_url('plugins/datatables-buttons/js/buttons.colVis.min.js') ?>?v=<? time() ?>"></script>
-
-    <script src="<?= base_url('js/admin/users.js') ?>?v=<? time() ?>"></script>
-    
+    <?= $this->include('admin/pages/user_management/cdn/cdn_js_users_management') ?>
+    <script src="<?= base_url('js/admin/user.js') ?>?v=<?= time() ?>"></script>
     <script>
         $(function() {
             $("#example1").DataTable({

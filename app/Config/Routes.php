@@ -30,5 +30,13 @@ $routes->group('/admin/', function($routes) {
     $routes->get('dashboard', 'Admin\Dashboard\DashboardController::dashboard');
 
     ## user-management
-    $routes->match(['get','post'], 'user-management', 'Admin\UserManagement\UserManagementController::users');
+    $routes->group('user-management/', function($routes) {
+        // display users in table
+        $routes->get('', 'Admin\UserManagement\UserManagementController::users');
+        $routes->get('view/(:any)', 'Admin\UserManagement\UserManagementController::view_user/$1');
+        $routes->match(['get', 'post'], 'edit/(:any)', 'Admin\UserManagement\UserManagementController::edit_user/$1');
+
+        // create user
+        $routes->post('create', 'Admin\UserManagement\UserManagementController::create_user');
+    });
 });

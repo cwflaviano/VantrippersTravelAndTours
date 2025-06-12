@@ -19,22 +19,22 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 
     <!-- GLOBAL CUSTOM CSS -->
-    <link rel="stylesheet" href="<?= base_url('plugins/fontawesome-free/css/all.min.css') ?>?v=<? time() ?>">
-    <link rel="stylesheet" href="<?= base_url('plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css') ?>?v=<? time() ?>">
-    <link rel="stylesheet" href="<?= base_url('plugins/icheck-bootstrap/icheck-bootstrap.min.css') ?>?v=<? time() ?>">
-    <link rel="stylesheet" href="<?= base_url('plugins/jqvmap/jqvmap.min.css') ?>?v=<? time() ?>">
-    <link rel="stylesheet" href="<?= base_url('dist/css/adminlte.min.css') ?>?v=<? time() ?>">
-    <link rel="stylesheet" href="<?= base_url('plugins/overlayScrollbars/css/OverlayScrollbars.min.css') ?>?v=<? time() ?>">
-    <link rel="stylesheet" href="<?= base_url('plugins/daterangepicker/daterangepicker.css') ?>?v=<? time() ?>">
-    <link rel="stylesheet" href="<?= base_url('plugins/summernote/summernote-bs4.min.css') ?>?v=<? time() ?>">
-    <link rel="stylesheet" href="<?= base_url('plugins/fontawesome-free/css/all.min.css') ?>?v=<? time() ?>">
-    <link rel="stylesheet" href="<?= base_url('plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') ?>?v=<? time() ?>">
-    <link rel="stylesheet" href="<?= base_url('plugins/datatables-responsive/css/responsive.bootstrap4.min.css') ?>?v=<? time() ?>">
-    <link rel="stylesheet" href="<?= base_url('plugins/datatables-buttons/css/buttons.bootstrap4.min.css') ?>?v=<? time() ?>">
-    <link rel="stylesheet" href="<?= base_url('dist/css/adminlte.min.css') ?>?v=<? time() ?>">
+    <link rel="stylesheet" href="<?= base_url('plugins/fontawesome-free/css/all.min.css') ?>?v=<?= time() ?>">
+    <link rel="stylesheet" href="<?= base_url('plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css') ?>?v=<?= time() ?>">
+    <link rel="stylesheet" href="<?= base_url('plugins/icheck-bootstrap/icheck-bootstrap.min.css') ?>?v=<?= time() ?>">
+    <link rel="stylesheet" href="<?= base_url('plugins/jqvmap/jqvmap.min.css') ?>?v=<?= time() ?>">
+    <link rel="stylesheet" href="<?= base_url('dist/css/adminlte.min.css') ?>?v=<?= time() ?>">
+    <link rel="stylesheet" href="<?= base_url('plugins/overlayScrollbars/css/OverlayScrollbars.min.css') ?>?v=<?= time() ?>">
+    <link rel="stylesheet" href="<?= base_url('plugins/daterangepicker/daterangepicker.css') ?>?v=<?= time() ?>">
+    <link rel="stylesheet" href="<?= base_url('plugins/summernote/summernote-bs4.min.css') ?>?v=<?= time() ?>">
+    <link rel="stylesheet" href="<?= base_url('plugins/fontawesome-free/css/all.min.css') ?>?v=<?= time() ?>">
+    <link rel="stylesheet" href="<?= base_url('plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') ?>?v=<?= time() ?>">
+    <link rel="stylesheet" href="<?= base_url('plugins/datatables-responsive/css/responsive.bootstrap4.min.css') ?>?v=<?= time() ?>">
+    <link rel="stylesheet" href="<?= base_url('plugins/datatables-buttons/css/buttons.bootstrap4.min.css') ?>?v=<?= time() ?>">
+    <link rel="stylesheet" href="<?= base_url('dist/css/adminlte.min.css') ?>?v=<?= time() ?>">
 
-    <link rel="stylesheet" href="<?= base_url('css/admin/sidebar.css') ?>?v=<? time() ?>">
-    <link rel="stylesheet" href="<?= base_url('css/admin/all.css') ?>?v=<? time() ?>">
+    <link rel="stylesheet" href="<?= base_url('css/admin/sidebar.css') ?>?v=<?= time() ?>">
+    <link rel="stylesheet" href="<?= base_url('css/admin/all.css') ?>?v=<?= time() ?>">
 
     <!-- render css libraries and css files-->
     <?= $this->renderSection('css_libraries') ?>
@@ -59,28 +59,27 @@
 
     
     <!-- Global js libraries and custom js -->
-    <!-- <?= base_url('') ?>?v=<? time() ?> -->
-    <script src="../assets/plugins/jquery/jquery.min.js"></script>
-    <script src="../assets/plugins/jquery-ui/jquery-ui.min.js"></script>
-    <script>$.widget.bridge('uibutton', $.ui.button)</script>
-    <script src="../assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="../assets/plugins/chart.js/Chart.min.js"></script>
-    <script src="../assets/plugins/sparklines/sparkline.js"></script>
-    <script src="../assets/plugins/jqvmap/jquery.vmap.min.js"></script>
-    <script src="../assets/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
-    <script src="../assets/plugins/jquery-knob/jquery.knob.min.js"></script>
-    <script src="../assets/plugins/moment/moment.min.js"></script>
-    <script src="../assets/plugins/daterangepicker/daterangepicker.js"></script>
-    <script src="../assets/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
-    <script src="../assets/plugins/summernote/summernote-bs4.min.js"></script>
-    <script src="../assets/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
-    <script src="../assets/dist/js/adminlte.js"></script>
-    <script src="../assets/dist/js/pages/dashboard.js"></script>
+    <script src="<?= base_url('plugins/jquery/jquery.min.js') ?>?v=<?= time() ?>"></script>
+    <script src="<?= base_url('plugins/jquery-ui/jquery-ui.min.js') ?>?v=<?= time() ?>"></script>
+    <script src="<?= base_url('plugins/bootstrap/js/bootstrap.bundle.min.js') ?>?v=<?= time() ?>"></script>
+    <script src="<?= base_url('plugins/chart.js/Chart.min.js') ?>?v=<?= time() ?>"></script>
+    <script src="<?= base_url('plugins/sparklines/sparkline.js') ?>?v=<?= time() ?>"></script>
+    <script src="<?= base_url('plugins/jqvmap/jquery.vmap.min.js') ?>?v=<?= time() ?>"></script>
+    <script src="<?= base_url('plugins/jqvmap/maps/jquery.vmap.usa.js') ?>?v=<?= time() ?>"></script>
+    <script src="<?= base_url('plugins/jquery-knob/jquery.knob.min.js') ?>?v=<?= time() ?>"></script>
+    <script src="<?= base_url('plugins/moment/moment.min.js') ?>?v=<?= time() ?>"></script>
+    <script src="<?= base_url('plugins/daterangepicker/daterangepicker.js') ?>?v=<?= time() ?>"></script>
+    <script src="<?= base_url('plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js') ?>?v=<?= time() ?>"></script>
+    <script src="<?= base_url('plugins/summernote/summernote-bs4.min.js') ?>?v=<?= time() ?>"></script>
+    <script src="<?= base_url('plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') ?>?v=<?= time() ?>"></script>
+    <script src="<?= base_url('dist/js/adminlte.js') ?>?v=<?= time() ?>"></script>
+    <script src="<?= base_url('dist/js/pages/dashboard.js') ?>?v=<?= time() ?>"></script>
     
     <!-- render js libraries and files -->
     <?= $this->renderSection('js_libraries') ?>
     <?= $this->renderSection('js') ?>
-
+    
+    <script>$.widget.bridge('uibutton', $.ui.button)</script>
     <script> 
         $.widget.bridge('uibutton', $.ui.button);
 
