@@ -27,7 +27,7 @@
                 <!-- USERS LINKS -->
                 <li class="nav-header">User's</li>
                 <li class="nav-item <?= ($page == 'user-management' ||  $page == 'view_users.php') ? 'menu-open' : '' ?>">
-                    <a href="#" class="nav-link <?= ($page == 'add_user.php' || $page == 'view_users.php') ? 'active' : '' ?>">
+                    <a href="#" class="nav-link <?= ($page == 'user-management' || $page == 'view_users.php') ? 'active' : '' ?>">
                         <i class="nav-icon fas fa-users-cog"></i>
                         <p id="sidebar-text">
                             User Management
@@ -36,7 +36,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="add_user.php" class="nav-link <?= ($page == 'add_user.php' ||  $page === 'view_users.php') ? 'active' : '' ?>">
+                            <a href="<?= base_url('/admin/user-management') ?>" class="nav-link <?= ($page == 'user-management' ||  $page === 'view_users.php') ? 'active' : '' ?>">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Add New User</p>
                             </a>

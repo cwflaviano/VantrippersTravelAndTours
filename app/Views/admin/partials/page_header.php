@@ -69,14 +69,14 @@
                     <i class="fas fa-user-circle fa-4x text-white"></i> <!-- Large user icon instead of image -->
                 </div>
                 <div class="dropdown-divider"></div>
-                <span style="pointer-events: none;" class="dropdown-item text-bold">USER OPTIONS</span>
+                <!-- <span style="pointer-events: none;" class="dropdown-item text-bold">USER OPTIONS</span> -->
 
                 <a href="#" class="dropdown-item">
                     <span>Settings</span><i class="fas fa-gear mr-2 float-right"></i>
                 </a>
 
                 <div class="dropdown-divider ml-2 mr-2"></div>
-                <span style="pointer-events: none;" class="dropdown-item text-bold">ACTIONS</span>
+                <!-- <span style="pointer-events: none;" class="dropdown-item text-bold">ACTIONS</span> -->
                 <a href="<?= base_url('/logout') ?>" class="dropdown-item">
                     <span class="ml-1">Logout</span><i class="fas fa-right-from-bracket mr-2 float-right"></i>
                 </a>

@@ -75,7 +75,7 @@
         </div>
         <hr class="mt-4 mb-4 bg-light">
         <div class="text-center">
-            <p>&copy; 2025 Vantrippers Travel & Tour. All Rights Reserved.</p>
+            <p>&copy; <?= date('Y') ?> Vantrippers Travel & Tour. All Rights Reserved.</p>
         </div>
     </div>
 </footer>

@@ -27,7 +27,8 @@ class LoginController extends BaseController
                             'role_id' => $userInserted['role_id'],
                             'department_id' => $userInserted['department_id'],
                             'first_name' => $userInserted['first_name'],
-                            'last_name' => $userInserted['last_name']
+                            'last_name' => $userInserted['last_name'],
+                            'administrator_account' => true 
                         ]);
                         return redirect()->back()->with('success','Login successful! Redirecting...');
                     }
