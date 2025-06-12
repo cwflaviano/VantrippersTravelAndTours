@@ -6,6 +6,17 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 ## ================================================================================================================================
+## ----- ERROR CONTROLLER ----- ##
+
+$routes->group('/', function($routes) {
+    $routes->get('page_not_found', 'ErrorController::error_404');
+    $routes->get('redirect_back', 'ErrorController::redirect_back');
+});
+
+
+
+
+## ================================================================================================================================
 ## ----- HOME CONTROLLER ----- ##
 $routes->group('/', ['filter' => 'admin_auth'], function($routes) {
     $routes->get('', 'HomeController::home');
@@ -26,14 +37,22 @@ $routes->get('/logout', 'LogoutController::logout');
 ## ================================================================================================================================
 ## ----- ADMIN CONTROLLERS ----- ##
 $routes->group('/admin/', function($routes) {
-    ## dashboard
+    // dashboard
     $routes->get('dashboard', 'Admin\Dashboard\DashboardController::dashboard');
 
     ## user-management
     $routes->group('user-management/', function($routes) {
         // display users in table
         $routes->get('', 'Admin\UserManagement\UserManagementController::users');
+        // view user
         $routes->get('view/(:any)', 'Admin\UserManagement\UserManagementController::view_user/$1');
+        // archived user
+        $routes->get('archived/(:any)', 'Admin\UserManagement\UserManagementController::archived_user/$1');
+        // restore archived user
+        $routes->get('restore/(:any)', 'Admin\UserManagement\UserManagementController::restore_user/$1');
+        // delete user
+        $routes->get('delete/(:any)', 'Admin\UserManagement\UserManagementController::delete_user/$1');
+        // edit user
         $routes->match(['get', 'post'], 'edit/(:any)', 'Admin\UserManagement\UserManagementController::edit_user/$1');
 
         // create user

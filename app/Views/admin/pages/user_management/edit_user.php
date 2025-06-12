@@ -16,7 +16,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <a href="add_user.php" class="btn btn-outline-secondary"><i class="fas fa-arrow-left"></i> Back to list</a>
+                        <a href="<?= base_url('/admin/user-management') ?>" class="btn btn-outline-secondary"><i class="fas fa-arrow-left"></i> Back to list</a>
                     </div>
                 </div>
             </div>
@@ -33,7 +33,7 @@
                             <div class="card-body">
                                 <h2 class="mb-3"> <i class="fas fa-user"></i> Edit User Information
                                 </h2>
-                                <form id="editUserForm" action="<?= base_url('/admin/user-management/edit') ?>" method="POST" enctype="multipart/form-data">
+                                <form id="editUserForm" action="<?= base_url('/admin/user-management/edit/'.$user['id']) ?>" method="post" enctype="multipart/form-data">
                                     <div class="d-flex flex-column align-items-center text-center">
                                         <?php $profileImage = $user['profile_picture'] ?? base_url('images/user.png'); ?>
                                         <img id="profilePicture" src="<?= base_url($profileImage) ?>" class="rounded-circle mb-3" alt="Profile Picture">

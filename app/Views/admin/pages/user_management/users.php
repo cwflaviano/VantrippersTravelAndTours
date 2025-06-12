@@ -132,16 +132,16 @@
                                                     <a href="<?= base_url('/admin/user-management/view/' . $user['id']) ?>" class="btn btn-dark btn-sm"><i class="far fa-eye"></i> Show</a>
                                                     <a href="<?= base_url('/admin/user-management/edit/' . $user['id']) ?>" class="btn btn-primary btn-sm"><i class="fas fa-pen"></i> Edit</a>
                                                     <?php if ($user['user_archived'] == 0): ?>
-                                                        <a href="user_archived.php?id=<?= htmlspecialchars($user['id']) ?>" class="btn btn-warning btn-sm">
+                                                        <a href="<?= base_url('/admin/user-management/archived/' . $user['id']) ?>" class="btn btn-warning btn-sm">
                                                             <i class="fas fa-archive"></i> Archive
                                                         </a>
                                                     <?php else: ?>
-                                                        <a href="user_restore.php?id=<?= htmlspecialchars($user['id']) ?>" class="btn btn-success btn-sm">
+                                                        <a href="<?= base_url('/admin/user-management/restore/' . $user['id']) ?>" class="btn btn-success btn-sm">
                                                             <i class="fas fa-undo"></i> Restore
                                                         </a>
                                                     <?php endif; ?>
 
-                                                    <a href="delete_user.php?id=<?= $user['id'] ?>" class="btn btn-danger btn-sm delete-user">
+                                                    <a href="<?= base_url('/admin/user-management/delete/' . $user['id']) ?>" class="btn btn-danger btn-sm delete-user">
                                                         <i class="fas fa-trash"></i> Delete
                                                     </a>
 

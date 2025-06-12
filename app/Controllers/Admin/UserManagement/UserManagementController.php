@@ -128,7 +128,7 @@ class UserManagementController extends BaseController
         $role = new roles();
 
         // if using post method when submitted
-        if($this->request->getMethod() === "POST") {
+        if($this->request->getMethod() === "POST" && $user_id) {
             $emp_id = $this->request->getPost('emp_id'); 
             $first_name = $this->request->getPost('first_name'); 
             $middle_name = $this->request->getPost('middle_name'); 
@@ -144,6 +144,7 @@ class UserManagementController extends BaseController
             $department_id = $this->request->getPost('department_id'); 
             $role_id = $this->request->getPost('role_id'); 
             $status = $this->request->getPost('status'); 
+
             // Handle file upload
             $profile_picture = $this->request->getFile('profile_picture');
             if ($profile_picture && $profile_picture->isValid() && !$profile_picture->hasMoved()) {
@@ -158,12 +159,13 @@ class UserManagementController extends BaseController
                     redirect()->to('/admin/user-management?status=error&message=' . urlencode('Failed to move uploaded file.'));
                 }
             }
-            $updatedUser = $users->db->query('UPDATE users SET emp_id = ?, first_name = ?, middle_name = ?, last_name = ?, gender = ?, birthdate = ?, position = ?, contact = ?, address = ?, email = ?, type_of_contract = ?, date_of_joining = ?, department_id = ?, role_id = ?, status = ?, profile_picture = ?, ',
-                                            [$emp_id, $first_name, $middle_name, $last_name, $gender, $birthdate, $position, $contact, $address, $email, $type_of_contract, $date_of_joining, $department_id, $role_id, $status, $profile_picture])->getRow();
+
+            $updatedUser = $users->db->query('UPDATE users SET emp_id = ?, first_name = ?, middle_name = ?, last_name = ?, gender = ?, birthdate = ?, position = ?, contact = ?, address = ?, email = ?, type_of_contract = ?, date_of_joining = ?, department_id = ?, role_id = ?, status = ?, profile_picture = ? WHERE id = ?',
+                                            [$emp_id, $first_name, $middle_name, $last_name, $gender, $birthdate, $position, $contact, $address, $email, $type_of_contract, $date_of_joining, $department_id, $role_id, $status, $profile_picture, $user_id]);                
+
             
-            if(!$updatedUser) {
-                
-            }
+            if(!$updatedUser) return "Can't update, User not found! <br><a href='". base_url('/admin/user-management/edit') . "'> Return to safety</a>";
+            return redirect()->back();
         }
 
         $user = $users->db->query('SELECT users.id, emp_id, first_name, middle_name, last_name, gender, email, contact, position, type_of_contract, users.department_id, users.role_id, status, date_of_joining, birthdate, address, profile_picture
@@ -182,4 +184,41 @@ class UserManagementController extends BaseController
         ];
         return view('admin/pages/user_management/edit_user', $data);
     }
+
+    ## Archived user
+    public function archived_user($user_id) {
+        $userId = $user_id ?? 0;
+        if($this->request->getMethod() == 'POST') 
+            return redirect()->to('/admin/user-management?status=error&message=' . urlencode('Invalid request.'));
+
+        try {
+            $users = new users();
+            $user = $users->db->query("SELECT * FROM users WHERE id = ?", [$userId])->getRowArray();
+            if($user) {
+                $users->db->query("UPDATE users SET user_archived = 1 WHERE id = ?", [$userId]);
+                return redirect()->back();
+            }
+            else {
+                return redirect()->to('/admin/user-management?status=error&message=' . urlencode('User not found.'));
+            }
+        }
+        catch(Exception $e) {
+            return redirect()->to('/admin/user-management?status=error&message=' . urlencode($e->getMessage()));
+        }
+    }
+
+    ## Restore user
+   public function restore_user($user) {
+        $userId = $user_id ?? 0;
+        if($userId == 0) return "Can't update, User not found! <br><a href='". base_url('/admin/user-management/edit') . "'> Return to safety</a>";
+
+    }
+
+    ## Delete user
+   public function delete_user($user) {
+        $userId = $user_id ?? 0;
+        if($userId == 0) return "Can't update, User not found! <br><a href='". base_url('/admin/user-management/edit') . "'> Return to safety</a>";
+
+    }
+
 }
