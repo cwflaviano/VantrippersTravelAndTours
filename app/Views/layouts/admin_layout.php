@@ -57,7 +57,9 @@
     <!-- render modals -->
     <?= $this->renderSection('modals') ?>
 
-    
+    <!-- Globally Included Logout Modal -->
+    <?= $this->include('admin/partials/logout_modal') ?>
+
     <!-- Global js libraries and custom js -->
     <script src="<?= base_url('plugins/jquery/jquery.min.js') ?>?v=<?= time() ?>"></script>
     <script src="<?= base_url('plugins/jquery-ui/jquery-ui.min.js') ?>?v=<?= time() ?>"></script>

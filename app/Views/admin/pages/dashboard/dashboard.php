@@ -89,3 +89,9 @@
         </div>
     </div>
 <?= $this->endSection() ?>
+
+
+
+<?= $this->section('modals') ?>
+<!-- Modal includes should be place here -->
+<?= $this->endSection() ?>

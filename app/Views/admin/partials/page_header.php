@@ -77,11 +77,10 @@
 
                 <div class="dropdown-divider ml-2 mr-2"></div>
                 <!-- <span style="pointer-events: none;" class="dropdown-item text-bold">ACTIONS</span> -->
-                <a href="<?= base_url('/logout') ?>" class="dropdown-item">
+                <a href="<!-- No link here -->" class="dropdown-item" data-toggle="modal" data-target="#logoutModal">
                     <span class="ml-1">Logout</span><i class="fas fa-right-from-bracket mr-2 float-right"></i>
                 </a>
             </div>
         </li>
-
     </ul>
 </nav>

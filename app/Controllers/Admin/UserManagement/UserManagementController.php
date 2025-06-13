@@ -8,6 +8,7 @@ use App\Controllers\BaseController;
 use App\Models\VantripperDb\UsersModel as users;
 use App\Models\VantripperDb\DepartmentsModel as departments;
 use App\Models\VantripperDb\RolesModel as roles;
+use CodeIgniter\Database\Query;
 
 class UserManagementController extends BaseController
 {
@@ -196,29 +197,58 @@ class UserManagementController extends BaseController
             $user = $users->db->query("SELECT * FROM users WHERE id = ?", [$userId])->getRowArray();
             if($user) {
                 $users->db->query("UPDATE users SET user_archived = 1 WHERE id = ?", [$userId]);
-                return redirect()->back();
+                return redirect()->to('/admin/user-management?status=archived_successful&message=' . urlencode('User has been successfully archived.'));
             }
             else {
-                return redirect()->to('/admin/user-management?status=error&message=' . urlencode('User not found.'));
+                return redirect()->to('/admin/user-management?status=archived_error&message=' . urlencode('User not found.'));
             }
         }
         catch(Exception $e) {
-            return redirect()->to('/admin/user-management?status=error&message=' . urlencode($e->getMessage()));
+            return redirect()->to('/admin/user-management?status=archived_error&message=' . urlencode($e->getMessage()));
         }
     }
 
     ## Restore user
-   public function restore_user($user) {
+    public function restore_user($user_id) {
         $userId = $user_id ?? 0;
         if($userId == 0) return "Can't update, User not found! <br><a href='". base_url('/admin/user-management/edit') . "'> Return to safety</a>";
 
+        try {
+            $users = new users();
+            $user = $users->db->query("SELECT * FROM users WHERE id = ?", [$userId])->getRowArray();
+
+            if($user) {
+                $users->db->query('UPDATE users SET user_archived = 0 WHERE id = ?', [$userId]);
+                return redirect()->to('/admin/user-management?status=restore_successful&message=' . urlencode('User has been successfully archived.'));
+            }
+            else {
+                return redirect()->to('/admin/user-management?status=restore_error&message=' . urlencode('User not found.'));
+            }
+        }
+        catch(Exception $e) {
+            return redirect()->to('/admin/user-management?status=restore_error&message=' . urlencode($e->getMessage()));
+        }
     }
 
     ## Delete user
-   public function delete_user($user) {
+    public function delete_user($user_id) {
         $userId = $user_id ?? 0;
         if($userId == 0) return "Can't update, User not found! <br><a href='". base_url('/admin/user-management/edit') . "'> Return to safety</a>";
 
-    }
+        try {
+            $users = new users();
+            $user = $users->db->query("SELECT * FROM users WHERE id = ?", [$userId])->getRowArray();
 
+            if($user) {
+                $users->db->query('UPDATE users SET user_delete = 1 WHERE id = ?', [$userId]);
+                return redirect()->to('/admin/user-management?status=delete_successful&message=' . urlencode('User has been successfully archived.'));
+            }
+            else {
+                return redirect()->to('/admin/user-management?status=delete_error&message=' . urlencode('User not found.'));
+            }
+        }
+        catch(Exception $e) {
+            return redirect()->to('/admin/user-management?status=delete_error&message=' . urlencode($e->getMessage()));
+        }
+    }
 }

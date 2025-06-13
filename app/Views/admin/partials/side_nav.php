@@ -205,7 +205,7 @@
     <div class="footer">
         <div class="sidebar-icons d-flex justify-content-end p-4 border-top">
            
-            <a style="color:gray;" href="<?= base_url('/logout') ?>" class="power-icon text-decoration-none">
+            <a style="color:gray;" href="<!-- No link here -->" class="power-icon text-decoration-none" data-toggle="modal" data-target="#logoutModal">
                 <i class="fas fa-power-off text-secondary"></i>
             </a>
         </div>

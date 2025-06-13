@@ -159,10 +159,18 @@
 
 
 
+<!-- Modals -->
+<?= $this->section('modals') ?>
+<!-- Modal includes should be place here -->
+<?= $this->endSection() ?>
+
+
 
 <!-- js -->
 <?= $this->section('css') ?>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script> const submition_url = "<?= base_url('/admin/user-management/edit') ?>?v=<?= time() ?>"; </script>
+    <script> 
+        const submition_url = "<?= base_url('/admin/user-management/edit') ?>?v=<?= time() ?>";
+    </script>
     <script src="<?= base_url('js/admin/edit_user.js') ?>?v=<?= time() ?>"></script>
 <?= $this->endSection() ?>  

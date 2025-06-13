@@ -160,6 +160,7 @@
 <?= $this->endSection() ?>
 
 <!-- modals -->
+<!-- Modal includes should be place here -->
 <?= $this->section('modals') ?>
     <?= $this->include('admin/pages/user_management/create_user_modal') ?>
 <?= $this->endSection() ?>
@@ -172,6 +173,7 @@
     <?= $this->include('admin/pages/user_management/cdn/cdn_js_users_management') ?>
     <script src="<?= base_url('js/admin/user.js') ?>?v=<?= time() ?>"></script>
     <script>
+        const reload = "<?= base_url('/admin/user-management') ?>";
         $(function() {
             $("#example1").DataTable({
                 "responsive": true,

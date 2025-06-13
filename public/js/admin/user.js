@@ -132,12 +132,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+// deleting user
 document.addEventListener('DOMContentLoaded', () => {
     const params = new URLSearchParams(window.location.search);
     const status = params.get('status');
     const message = params.get('message');
 
-    if (status === 'deleted') {
+    if (status === 'delete_successful') {
         Swal.fire({
             icon: 'success',
             title: 'Deleted!',
@@ -149,7 +150,41 @@ document.addEventListener('DOMContentLoaded', () => {
         }).then(() => {
             window.history.replaceState({}, document.title, window.location.pathname);
         });
-    } else if (status === 'error') {
+    } else if (status === 'delete_error') {
+        Swal.fire({
+            icon: 'error',
+            title: 'Error!',
+            text: decodeURIComponent(message),
+            confirmButtonText: 'OK',
+            allowOutsideClick: false,
+            allowEscapeKey: false
+        }).then(() => {
+            window.history.replaceState({}, document.title, window.location.pathname);
+        });
+    }
+});
+
+
+// archived or restoring user
+document.addEventListener('DOMContentLoaded', () => {
+    const params = new URLSearchParams(window.location.search);
+    const status = params.get('status');
+    const message = params.get('message');
+    var title = (status === 'archived_successful') ? 'Archived' : 'Restored';
+    if(status === 'archived_successful' || status === 'restore_successful') {
+        Swal.fire({
+            icon: 'success',
+            title: title,
+            text: decodeURIComponent(message),
+            timer: 2000,
+            showConfirmButton: false,
+            allowOutsideClick: false,
+            allowEscapeKey: false
+        }).then(() => {
+            window.history.replaceState({}, document.title, window.location.pathname);
+        });
+    }
+    else if(status === 'archived_error' || status === 'restore_error') {
         Swal.fire({
             icon: 'error',
             title: 'Error!',
