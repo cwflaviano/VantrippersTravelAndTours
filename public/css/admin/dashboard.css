@@ -34,6 +34,7 @@
     .content {
         padding: 20px 0;
         display: flex;
+        flex-wrap: wrap;
         gap: 10px;
 
         .group-container {
@@ -105,6 +106,27 @@
                 padding: 10px 5px;
                 text-align: center;
             }
+        }
+    }
+}
+
+
+@media (max-width: 992px) {
+    .dashboard {
+        .content {
+            padding: 10px;
+
+            .group-container {
+                width: 100%;
+            }
+
+            .group {
+                flex-wrap: wrap;
+            }
+        }
+
+        .card {
+            width: 100%;
         }
     }
 }

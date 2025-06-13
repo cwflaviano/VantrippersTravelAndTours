@@ -2,6 +2,28 @@
     scrollbar-width: none !important;
 }
 
+.dataTables_paginate {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.next, .previous {
+    display: none !important;
+}
+
+.view-card, .card-body {
+    max-height: 550px;
+    overflow: auto;
+}
+
+.content-wrapper {
+    height: 100dvh;
+    overflow-y: auto;
+}
+
 .logo-circle {
     width: 160px;
     height: 160px;
@@ -80,21 +102,3 @@
     font-size: 0.6rem;
     padding: 2px 5px;
 }
-
-.sidebar-collapse {
-    /* .notification-icon, .message-icon, .settings-icon {
-        display: none;
-    } */
-}
-
-
-
-
-
-
-
-
-
-
-
-

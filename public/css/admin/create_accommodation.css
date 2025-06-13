@@ -1,0 +1,135 @@
+
+    .accommodation-entry {
+      margin-bottom: 2rem;
+      position: relative;
+      border-radius: 8px;
+      box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+      transition: box-shadow 0.3s ease;
+    }
+
+    .accommodation-entry:hover {
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    }
+
+    .card-header {
+      background-color: #5c6c75;
+      color: white;
+      border-radius: 8px 8px 0 0;
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .section-header {
+      border-left: 4px solid #ff8e2a;
+      padding-left: 12px;
+      margin-top: 20px;
+      margin-bottom: 15px;
+    }
+
+    .section-header h6 {
+      font-weight: 600;
+      color: #5c6c75;
+      margin-bottom: 0;
+    }
+
+    .form-control {
+      border-radius: 4px;
+      border: 1px solid #ced4da;
+      transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    }
+
+    .form-control:focus {
+      border-color: #ff8e2a;
+      box-shadow: 0 0 0 0.2rem rgba(255, 142, 42, 0.25);
+    }
+
+    .custom-select {
+      background-color: #fff;
+      border: 1px solid #ced4da;
+      border-radius: 4px;
+    }
+
+    .input-group-text {
+      background-color: #f8f9fa;
+      border: 1px solid #ced4da;
+    }
+
+    .btn-primary {
+      background-color: #5c6c75;
+      border-color: #5c6c75;
+    }
+
+    .btn-primary:hover {
+      background-color: #4a5a64;
+      border-color: #4a5a64;
+    }
+
+    .btn-success {
+      background-color: #28a745;
+      border-color: #28a745;
+    }
+
+    .btn-danger {
+      background-color: #dc3545;
+      border-color: #dc3545;
+    }
+
+    .remove-entry {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      z-index: 10;
+    }
+
+    .form-text {
+      color: #6c757d;
+      font-size: 0.85rem;
+    }
+
+    .conditional-section {
+      background-color: #f8f9fa;
+      border-radius: 4px;
+      padding: 10px;
+      margin-top: 8px;
+      border-left: 4px solid #5c6c75;
+    }
+
+    .progress-indicator {
+      height: 8px;
+      margin-bottom: 20px;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .progress-bar {
+      background-color: #ff8e2a;
+    }
+
+    .form-actions {
+      padding: 15px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      background-color: #f8f9fa;
+      border-radius: 8px;
+    }
+
+    .required-field::after {
+      content: " *";
+      color: #dc3545;
+    }
+
+    .display-text {
+      font-size: 0.875rem;
+      padding: 8px;
+      margin-top: 8px;
+      border-radius: 4px;
+      background-color: #e9ecef;
+      border-left: 3px solid #ff8e2a;
+    }
+
+    /* Only inputs and textareas with clearDefault will be cleared on clone */
+    .clearDefault {
+      color: #000;
+    }

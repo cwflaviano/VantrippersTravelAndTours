@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controllers\Admin\UserManagement;
+namespace App\Controllers\Admin;
 
 use Exception;
 use App\Controllers\BaseController;

@@ -47,20 +47,20 @@
                 <!-- HOTEL MANAGEMENT LINKS -->
                 <li class="nav-header">Hotel Management</li>
                 <li class="nav-item">
-                    <a href="create_accommodation.php" class="nav-link <?= $page == 'create_accommodation.php' ? 'active' : '' ?>">
+                    <a href="<?= base_url('/admin/create-accommodation') ?>" class="nav-link <?= $page == 'create-accommodation' ? 'active' : '' ?>">
                         <i class="nav-icon fas fa-hotel"></i>
                         <p>Accommodation</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="accommodation_list.php" class="nav-link <?= ($page == 'accommodation_list.php') ? 'active' : '' ?>">
+                    <a href="<?= base_url('/admin/list-accommodation') ?>" class="nav-link <?= ($page == 'list-accommodation') ? 'active' : '' ?>">
                         <i class="nav-icon fas fa-clipboard-list"></i>
                         <p>List of Accommodation</p>
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a href="search_accommodation.php" class="nav-link <?= ($page == 'search_accommodation.php') ? 'active' : '' ?>">
+                    <a href="<?= base_url('/admin/search-accommodation') ?>" class="nav-link <?= ($page == 'search-accommodation') ? 'active' : '' ?>">
                     <i class="nav-icon fas fa-search"></i>
                         <p>Search Accommodation</p>
                     </a>

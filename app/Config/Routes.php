@@ -38,24 +38,27 @@ $routes->get('/logout', 'LogoutController::logout');
 ## ----- ADMIN CONTROLLERS ----- ##
 $routes->group('/admin/', function($routes) {
     // dashboard
-    $routes->get('dashboard', 'Admin\Dashboard\DashboardController::dashboard');
+    $routes->get('dashboard', 'Admin\DashboardController::dashboard');
 
     ## user-management
     $routes->group('user-management/', function($routes) {
         // display users in table
-        $routes->get('', 'Admin\UserManagement\UserManagementController::users');
+        $routes->get('', 'Admin\UserManagementController::users');
         // view user
-        $routes->get('view/(:any)', 'Admin\UserManagement\UserManagementController::view_user/$1');
+        $routes->get('view/(:any)', 'Admin\UserManagementController::view_user/$1');
         // archived user
-        $routes->get('archived/(:any)', 'Admin\UserManagement\UserManagementController::archived_user/$1');
+        $routes->get('archived/(:any)', 'Admin\UserManagementController::archived_user/$1');
         // restore archived user
-        $routes->get('restore/(:any)', 'Admin\UserManagement\UserManagementController::restore_user/$1');
+        $routes->get('restore/(:any)', 'Admin\UserManagementController::restore_user/$1');
         // delete user
-        $routes->get('delete/(:any)', 'Admin\UserManagement\UserManagementController::delete_user/$1');
+        $routes->get('delete/(:any)', 'Admin\UserManagementController::delete_user/$1');
         // edit user
-        $routes->match(['get', 'post'], 'edit/(:any)', 'Admin\UserManagement\UserManagementController::edit_user/$1');
+        $routes->match(['get', 'post'], 'edit/(:any)', 'Admin\UserManagementController::edit_user/$1');
 
         // create user
-        $routes->post('create', 'Admin\UserManagement\UserManagementController::create_user');
+        $routes->post('create', 'Admin\UserManagement::create_user');
     });
+
+    ## accommodation
+    $routes->match(['get', 'post'], 'create-accommodation', 'Admin\AccommodationController::create_accommodation');
 });
