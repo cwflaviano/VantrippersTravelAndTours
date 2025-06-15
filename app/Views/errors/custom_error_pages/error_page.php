@@ -198,8 +198,8 @@
     <div class="cont_principal">
     <div class="cont_error">
     
-    <h1>Oops</h1>  
-    <p>The Page you're looking for isn't here.</p>
+    <h1>Error!</h1>  
+    <p><?= session()->has('error') ?? 'ERROR FOUND!' ?></p>
     <a href="<?= base_url('/redirect_back') ?>"><button>Redirect back</button></a>
     </div>
     <div class="cont_aura_1"></div>

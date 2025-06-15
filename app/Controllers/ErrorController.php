@@ -9,6 +9,10 @@ class ErrorController extends BaseController
         return view('errors/custom_error_pages/404_error');
     }
 
+    public function error_page() {
+        return view('errors/custom_error_pages/error_page');
+    }
+
     public function redirect_back() {
         if(session()->has('administrator_account') && session()->has('user_id') && session()->get('role_id') == 1) {
             return redirect()->to('/admin/dashboard');

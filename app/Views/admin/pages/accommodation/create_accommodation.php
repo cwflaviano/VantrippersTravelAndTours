@@ -21,13 +21,6 @@
                             <i class="fas fa-info"></i> Note:Enter accommodation details below. If information is not available for any field, "Leave it Blank". 
                         </small>
                     </div>
-                    
-                    <div class="col-sm-6">
-                        <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active">Add Accommodation</li>
-                        </ol>
-                    </div>
                 </div>
             </div>
         </div>
@@ -38,7 +31,7 @@
                     <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
 
-                <form class="confirm-create" action="create_accommodation.php?action=create" method="post">
+                <form class="confirm-create" action="<?= base_url('/admin/create-accommodation') ?>" method="post">
                     <div id="accommodationContainer">
                     <!-- Single Entry Template -->
                     <div class="accommodation-entry card">
@@ -267,7 +260,7 @@
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="created_by">Created By</label>
-                                <input type="text" id="created_by" name="created_by[]" class="form-control bg-light" value="<?php echo htmlspecialchars($user_name) ?>" readonly>
+                                <input type="text" id="created_by" name="created_by[]" class="form-control bg-light" value="<?= esc($user_name) ?>" readonly>
                             </div>
                         </div>
 
@@ -338,4 +331,10 @@
             </div>
         </section>
     </div>
+<?= $this->endSection() ?>
+
+
+
+<?= $this->Section('js') ?>
+    <script src="<?= base_url('js/admin/create_accommodation.js') ?>?v=<?= time() ?>"></script>
 <?= $this->endSection() ?>

@@ -240,7 +240,7 @@ class UserManagementController extends BaseController
             $user = $users->db->query("SELECT * FROM users WHERE id = ?", [$userId])->getRowArray();
 
             if($user) {
-                $users->db->query('UPDATE users SET user_delete = 1 WHERE id = ?', [$userId]);
+                $users->db->query('DELETE FROM users WHERE id = ?', [$userId]);
                 return redirect()->to('/admin/user-management?status=delete_successful&message=' . urlencode('User has been successfully archived.'));
             }
             else {

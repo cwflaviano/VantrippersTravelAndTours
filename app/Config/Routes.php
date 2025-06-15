@@ -10,6 +10,7 @@ use CodeIgniter\Router\RouteCollection;
 
 $routes->group('/', function($routes) {
     $routes->get('page_not_found', 'ErrorController::error_404');
+    $routes->get('error_page', 'ErrorController::error_page');
     $routes->get('redirect_back', 'ErrorController::redirect_back');
 });
 
@@ -56,9 +57,17 @@ $routes->group('/admin/', function($routes) {
         $routes->match(['get', 'post'], 'edit/(:any)', 'Admin\UserManagementController::edit_user/$1');
 
         // create user
-        $routes->post('create', 'Admin\UserManagement::create_user');
+        $routes->post('create', 'Admin\UserManagementController::create_user');
     });
 
-    ## accommodation
-    $routes->match(['get', 'post'], 'create-accommodation', 'Admin\AccommodationController::create_accommodation');
+    ## accommodation management
+    $routes->group('accommodation/', function($routes) {
+        // create / add accommodation
+        $routes->match(['get', 'post'], 'create', 'Admin\AccommodationController::create_accommodation');
+        // list of accommodation
+        $routes->get('list', 'Admin\AccommodationController::list_accommodation');
+        // $routes->get('edit', 'Admin\AccommodationController::list_accommodation');
+        // $routes->get('delete', 'Admin\AccommodationController::list_accommodation');
+        $routes->get('search', 'Admin\AccommodationController::search_accommodation');
+    });
 });

@@ -180,7 +180,6 @@
 
 <!-- js -->
 <?= $this->section('js') ?>
-    <?= $this->include('admin/pages/user_management/cdn/cdn_js_users_management') ?>
     <script src="<?= base_url('js/admin/user.js') ?>?v=<?= time() ?>"></script>
     <script>const reload = "<?= base_url('/admin/user-management') ?>";</script>
 <?= $this->endSection() ?>

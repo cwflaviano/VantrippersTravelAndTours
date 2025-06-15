@@ -1,5 +1,7 @@
 <!-- GET THE SECOND SEGMENT OF THE BASE URL = ex. https://localhost/project_name/public/segment1/segment2/segment3/ -->
-<?php $page = service('uri')->getSegment(2); ?> 
+<?php $seg1 = service('uri')->getSegment(1); ?> 
+<?php $seg2 = service('uri')->getSegment(2); ?> 
+<?php $seg3 = service('uri')->getSegment(3); ?> 
 
 <!-- NAVIGATION SIDE BAR -->
 <aside class="main-sidebar sidebar-light-light elevation-4">
@@ -16,7 +18,7 @@
                 <li class="nav-header">Main </li>
                 <!-- DASHBOARD LINK -->
                 <li class="nav-item">
-                    <a href="<?= base_url('/admin/dashboard') ?>" class="nav-link <?= $page == 'dashboard' ? 'active' : '' ?>">
+                    <a href="<?= base_url('/admin/dashboard') ?>" class="nav-link <?= $seg2 == 'dashboard' ? 'active' : '' ?>">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p id="sidebar-text">
                             Dashboard
@@ -26,8 +28,8 @@
 
                 <!-- USERS LINKS -->
                 <li class="nav-header">User's</li>
-                <li class="nav-item <?= ($page == 'user-management' ||  $page == 'view_users.php') ? 'menu-open' : '' ?>">
-                    <a href="#" class="nav-link <?= ($page == 'user-management' || $page == 'view_users.php') ? 'active' : '' ?>">
+                <li class="nav-item <?= ($seg2 == 'user-management' ||  $seg2 == 'view_users.php') ? 'menu-open' : '' ?>">
+                    <a href="#" class="nav-link <?= ($seg2 == 'user-management' || $seg2 == 'view_users.php') ? 'active' : '' ?>">
                         <i class="nav-icon fas fa-users-cog"></i>
                         <p id="sidebar-text">
                             User Management
@@ -36,7 +38,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="<?= base_url('/admin/user-management') ?>" class="nav-link <?= ($page == 'user-management' ||  $page === 'view_users.php') ? 'active' : '' ?>">
+                            <a href="<?= base_url('/admin/user-management') ?>" class="nav-link <?= ($seg2 == 'user-management' ||  $seg2 === 'view_users.php') ? 'active' : '' ?>">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Add New User</p>
                             </a>
@@ -47,20 +49,20 @@
                 <!-- HOTEL MANAGEMENT LINKS -->
                 <li class="nav-header">Hotel Management</li>
                 <li class="nav-item">
-                    <a href="<?= base_url('/admin/create-accommodation') ?>" class="nav-link <?= $page == 'create-accommodation' ? 'active' : '' ?>">
+                    <a href="<?= base_url('/admin/accommodation/create') ?>" class="nav-link <?= $seg3 == 'create' ? 'active' : '' ?>">
                         <i class="nav-icon fas fa-hotel"></i>
                         <p>Accommodation</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="<?= base_url('/admin/list-accommodation') ?>" class="nav-link <?= ($page == 'list-accommodation') ? 'active' : '' ?>">
+                    <a href="<?= base_url('/admin/accommodation/list') ?>" class="nav-link <?= ($seg3 == 'list') ? 'active' : '' ?>">
                         <i class="nav-icon fas fa-clipboard-list"></i>
                         <p>List of Accommodation</p>
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a href="<?= base_url('/admin/search-accommodation') ?>" class="nav-link <?= ($page == 'search-accommodation') ? 'active' : '' ?>">
+                    <a href="<?= base_url('/admin/accommodation/search') ?>" class="nav-link <?= ($seg3 == 'search') ? 'active' : '' ?>">
                     <i class="nav-icon fas fa-search"></i>
                         <p>Search Accommodation</p>
                     </a>
@@ -68,8 +70,8 @@
 
                 <!-- CRM LINKS -->
                 <li class="nav-header">CRM</li>
-                <li class="nav-item <?= ($page == 'gallery-admin.php' || $page == 'faq_admin.php') ? 'menu-open' : '' ?>">
-                    <a href="#" class="nav-link <?= ($page == 'gallery-admin.php' || $page == 'faq_admin.php') ? 'active' : '' ?>">
+                <li class="nav-item <?= ($seg2 == 'gallery-admin.php' || $seg2 == 'faq_admin.php') ? 'menu-open' : '' ?>">
+                    <a href="#" class="nav-link <?= ($seg2 == 'gallery-admin.php' || $seg2 == 'faq_admin.php') ? 'active' : '' ?>">
                         <i class="nav-icon fas fa-images"></i>
                         <p id="sidebar-text">
                             Gallery Management
@@ -78,7 +80,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="gallery-admin.php" class="nav-link <?= $page == 'gallery-admin.php' ? 'active' : '' ?>">
+                            <a href="gallery-admin.php" class="nav-link <?= $seg2 == 'gallery-admin.php' ? 'active' : '' ?>">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Gallery</p>
                             </a>
@@ -86,15 +88,15 @@
                     </ul>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="faq_admin.php" class="nav-link <?= $page == 'faq_admin.php' ? 'active' : '' ?>">
+                            <a href="faq_admin.php" class="nav-link <?= $seg2 == 'faq_admin.php' ? 'active' : '' ?>">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>FAQ</p>
                             </a>
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item <?= ($page == 'packages_admin.php' || $page == 'van_bookings.php') ? 'menu-open' : '' ?>">
-                    <a href="#" class="nav-link <?= ($page == 'packages_admin.php') ? 'active' : '' ?>">
+                <li class="nav-item <?= ($seg2 == 'packages_admin.php' || $seg2 == 'van_bookings.php') ? 'menu-open' : '' ?>">
+                    <a href="#" class="nav-link <?= ($seg2 == 'packages_admin.php') ? 'active' : '' ?>">
                         <i class="nav-icon fas fa-globe"></i>
                         <p id="sidebar-text">
                             Travel Packages
@@ -103,7 +105,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="packages_admin.php" class="nav-link <?= $page == 'packages_admin.php' ? 'active' : '' ?>">
+                            <a href="packages_admin.php" class="nav-link <?= $seg2 == 'packages_admin.php' ? 'active' : '' ?>">
                                 <i class="far fa-circle nav-icon"></i>
 
                                 <p id="sidebar-text">
@@ -114,8 +116,8 @@
                     </ul>
                 </li>
 
-                <li class="nav-item <?= ($page == 'van_management.php' || $page == 'van_bookings.php') ? 'menu-open' : '' ?>">
-                    <a href="#" class="nav-link <?= ($page == 'van_management.php' || $page == 'van_bookings.php') ? 'active' : '' ?>">
+                <li class="nav-item <?= ($seg2 == 'van_management.php' || $seg2 == 'van_bookings.php') ? 'menu-open' : '' ?>">
+                    <a href="#" class="nav-link <?= ($seg2 == 'van_management.php' || $seg2 == 'van_bookings.php') ? 'active' : '' ?>">
                         <i class="nav-icon fas fa-truck"></i>
                         <p id="sidebar-text">
                             Van Management
@@ -124,7 +126,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="van_management.php" class="nav-link <?= $page == 'van_management.php' ? 'active' : '' ?>">
+                            <a href="van_management.php" class="nav-link <?= $seg2 == 'van_management.php' ? 'active' : '' ?>">
                                 <i class="far fa-circle nav-icon"></i>
 
                                 <p id="sidebar-text">
@@ -134,7 +136,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="van_bookings.php" class="nav-link <?= $page == 'van_bookings.php' ? 'active' : '' ?>">
+                            <a href="van_bookings.php" class="nav-link <?= $seg2 == 'van_bookings.php' ? 'active' : '' ?>">
                                 <i class="far fa-circle nav-icon"></i>
 
                                 <p id="sidebar-text">
@@ -148,8 +150,8 @@
 
                 <!-- MARKETING LINKS  -->
                 <li class="nav-header">Marketing</li>
-                <li class="nav-item <?= ($page == '') ? 'menu-open' : '' ?>">
-                    <a href="#" class="nav-link <?= ($page == '') ? 'active' : '' ?>">
+                <li class="nav-item <?= ($seg2 == '') ? 'menu-open' : '' ?>">
+                    <a href="#" class="nav-link <?= ($seg2 == '') ? 'active' : '' ?>">
                         <i class="nav-icon fas fa-copy"></i>
                         <p id="sidebar-text">
                             Template
@@ -158,13 +160,13 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="#" class="nav-link <?= ($page == '') ? 'active' : '' ?>">
+                            <a href="#" class="nav-link <?= ($seg2 == '') ? 'active' : '' ?>">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Item 1</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link <?= ($page == '') ? 'active' : '' ?>">
+                            <a href="#" class="nav-link <?= ($seg2 == '') ? 'active' : '' ?>">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Item 2</p>
                             </a>
@@ -174,8 +176,8 @@
 
                 <!-- HR LINKS -->
                 <li class="nav-header">HR</li>
-                <li class="nav-item <?= ($page == '') ? 'menu-open' : '' ?>">
-                    <a href="#" class="nav-link <?= ($page == '') ? 'active' : '' ?>">
+                <li class="nav-item <?= ($seg2 == '') ? 'menu-open' : '' ?>">
+                    <a href="#" class="nav-link <?= ($seg2 == '') ? 'active' : '' ?>">
                         <i class="nav-icon fas fa-user-tie"></i>
                         <p id="sidebar-text">
                             Employees
@@ -184,13 +186,13 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="#" class="nav-link <?= ($page == '') ? 'active' : '' ?>">
+                            <a href="#" class="nav-link <?= ($seg2 == '') ? 'active' : '' ?>">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Item 1</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link <?= ($page == '') ? 'active' : '' ?>">
+                            <a href="#" class="nav-link <?= ($seg2 == '') ? 'active' : '' ?>">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Item 2</p>
                             </a>

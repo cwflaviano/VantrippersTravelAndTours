@@ -12,29 +12,7 @@
     <title><?= $title ?? "Administrator Page" ?></title>
 
     <!-- Global css libraries and custom css -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha384-2aZ3Q0N2xJY6D/FwFEIVWVlH76zHTAeMv6/6XlVWkwnb3nVbs1Fq0dMnh2ImE4Uk" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-
-    <!-- GLOBAL CUSTOM CSS -->
-    <link rel="stylesheet" href="<?= base_url('plugins/fontawesome-free/css/all.min.css') ?>?v=<?= time() ?>">
-    <link rel="stylesheet" href="<?= base_url('plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css') ?>?v=<?= time() ?>">
-    <link rel="stylesheet" href="<?= base_url('plugins/icheck-bootstrap/icheck-bootstrap.min.css') ?>?v=<?= time() ?>">
-    <link rel="stylesheet" href="<?= base_url('plugins/jqvmap/jqvmap.min.css') ?>?v=<?= time() ?>">
-    <link rel="stylesheet" href="<?= base_url('dist/css/adminlte.min.css') ?>?v=<?= time() ?>">
-    <link rel="stylesheet" href="<?= base_url('plugins/overlayScrollbars/css/OverlayScrollbars.min.css') ?>?v=<?= time() ?>">
-    <link rel="stylesheet" href="<?= base_url('plugins/daterangepicker/daterangepicker.css') ?>?v=<?= time() ?>">
-    <link rel="stylesheet" href="<?= base_url('plugins/summernote/summernote-bs4.min.css') ?>?v=<?= time() ?>">
-    <link rel="stylesheet" href="<?= base_url('plugins/fontawesome-free/css/all.min.css') ?>?v=<?= time() ?>">
-    <link rel="stylesheet" href="<?= base_url('plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') ?>?v=<?= time() ?>">
-    <link rel="stylesheet" href="<?= base_url('plugins/datatables-responsive/css/responsive.bootstrap4.min.css') ?>?v=<?= time() ?>">
-    <link rel="stylesheet" href="<?= base_url('plugins/datatables-buttons/css/buttons.bootstrap4.min.css') ?>?v=<?= time() ?>">
-    <link rel="stylesheet" href="<?= base_url('dist/css/adminlte.min.css') ?>?v=<?= time() ?>">
-
-    <link rel="stylesheet" href="<?= base_url('css/admin/sidebar.css') ?>?v=<?= time() ?>">
-    <link rel="stylesheet" href="<?= base_url('css/admin/all.css') ?>?v=<?= time() ?>">
+    <?= $this->include('admin/partials/cdn/cdn_css') ?>
 
     <!-- render css libraries and css files-->
     <?= $this->renderSection('css_libraries') ?>
@@ -61,21 +39,8 @@
     <?= $this->include('admin/partials/logout_modal') ?>
 
     <!-- Global js libraries and custom js -->
-    <script src="<?= base_url('plugins/jquery/jquery.min.js') ?>?v=<?= time() ?>"></script>
-    <script src="<?= base_url('plugins/jquery-ui/jquery-ui.min.js') ?>?v=<?= time() ?>"></script>
-    <script src="<?= base_url('plugins/bootstrap/js/bootstrap.bundle.min.js') ?>?v=<?= time() ?>"></script>
-    <script src="<?= base_url('plugins/chart.js/Chart.min.js') ?>?v=<?= time() ?>"></script>
-    <script src="<?= base_url('plugins/sparklines/sparkline.js') ?>?v=<?= time() ?>"></script>
-    <script src="<?= base_url('plugins/jqvmap/jquery.vmap.min.js') ?>?v=<?= time() ?>"></script>
-    <script src="<?= base_url('plugins/jqvmap/maps/jquery.vmap.usa.js') ?>?v=<?= time() ?>"></script>
-    <script src="<?= base_url('plugins/jquery-knob/jquery.knob.min.js') ?>?v=<?= time() ?>"></script>
-    <script src="<?= base_url('plugins/moment/moment.min.js') ?>?v=<?= time() ?>"></script>
-    <script src="<?= base_url('plugins/daterangepicker/daterangepicker.js') ?>?v=<?= time() ?>"></script>
-    <script src="<?= base_url('plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js') ?>?v=<?= time() ?>"></script>
-    <script src="<?= base_url('plugins/summernote/summernote-bs4.min.js') ?>?v=<?= time() ?>"></script>
-    <script src="<?= base_url('plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') ?>?v=<?= time() ?>"></script>
-    <script src="<?= base_url('dist/js/adminlte.js') ?>?v=<?= time() ?>"></script>
-    <script src="<?= base_url('dist/js/pages/dashboard.js') ?>?v=<?= time() ?>"></script>
+    <?= $this->include('admin/partials/cdn/cdn_js') ?>
+
     
     <!-- render js libraries and files -->
     <?= $this->renderSection('js_libraries') ?>
@@ -83,8 +48,6 @@
     
     <script>$.widget.bridge('uibutton', $.ui.button)</script>
     <script> 
-        $.widget.bridge('uibutton', $.ui.button);
-
         $(document).ready(function() {
             $('.nav-link[data-widget="pushmenu"]').on('click', function() {
                 setTimeout(() => {
