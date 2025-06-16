@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Controllers\Admin;
-
+use Config\Database;
 use Exception;
 use App\Controllers\BaseController;
 use App\Models\VantripperDb\UsersModel as users;
@@ -77,7 +77,7 @@ class AccommodationController extends BaseController {
                     }
     
                     $accommodations = new accommodations();
-                    $accommodations->db->query("INSERT INTO accommodation ( place, fb,  hotel_name, room_type, 
+                    $accommodations->db->query('INSERT INTO accommodation ( place, fb,  hotel_name, room_type, 
                                                                             total_rate, per_head, capacity, 
                                                                             star_rating, pet_friendly, breakfast, 
                                                                             pool, elevator, remarks, 
@@ -86,7 +86,7 @@ class AccommodationController extends BaseController {
                                                                             email, season_type, season_start_date, 
                                                                             season_end_date, can_accommodate, contact, 
                                                                             beachfront, area ) 
-                                                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+                                                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
                                                     [$place, $fb, $hotel_name, $room_type, $total_rate, $per_head, $capacity, $star_rating, $pet_friendly, $breakfast, $pool, $elevator, $remarks, $created_by, $function_hall, $distance_from, $distance_location, $pin_location, $description, $email, $season_type, $season_start_date, $season_end_date, $can_accommodate, $contact, $beachfront, $area]);              
                 }
                 return redirect()->to('/admin/create-accommodation?status=success');
@@ -108,16 +108,78 @@ class AccommodationController extends BaseController {
     }
 
     // list accommodation, redirect to accommodation page
-    public function list_accommodation() {
-        
-        $data = [
-            'title' => 'Accommodation | Admin'
-        ];
-        return view('admin/pages/accommodation/list_accommodation', $data);
+    public function list_accommodation() {   
+        return view('admin/pages/accommodation/list_accommodation', ['title' => 'Accommodations | Admin']);
     }
 
+    ## fetch accommodation list and send as json
+    public function fetch_accommodation() {
+        try {
+            $db = Database::connect('vantripper_db');
+            $builder = $db->table('accommodation');
+
+            $draw   = intval($this->request->getGet('draw'));
+            $start  = intval($this->request->getGet('start'));
+            $length = intval($this->request->getGet('length'));
+
+            $search = '';
+            $search_array = $this->request->getGet('search');
+            if (is_array($search_array) && isset($search_array['value'])) {
+                $search = $search_array['value'];
+            }
+
+            $columns = [
+                'id', 'place', 'email', 'contact', 'description', 'remarks', 'fb', 
+                'hotel_name', 'room_type', 'total_rate', 'per_head', 'capacity', 
+                'star_rating', 'pet_friendly', 'breakfast', 'pool', 'elevator', 
+                'function_hall','beachfront', 'distance_from', 'distance_location', 'area', 
+                'pin_location', 'can_accommodate', 'created_by', 'updated_by'
+            ];
+
+            // Total records
+            $totalRecords = $builder->countAll();
+
+            // Filtering
+            if (!empty($search)) {
+                $builder->groupStart(); // Group OR conditions
+                foreach ($columns as $col) {
+                    $builder->orLike($col, $search);
+                }
+                $builder->groupEnd();
+            }
+
+            // Clone builder for filtered count
+            $filteredBuilder = clone $builder;
+            $recordsFiltered = $filteredBuilder->countAllResults(false);
+
+            // Ordering
+            $order = $this->request->getGet('order');
+            $orderColumnIdx = isset($order[0]['column']) ? intval($order[0]['column']) : 0;
+            $orderDir = isset($order[0]['dir']) && strtolower($order[0]['dir']) === 'desc' ? 'DESC' : 'ASC';
+            $orderCol = $columns[$orderColumnIdx] ?? 'id';
+            $builder->orderBy($orderCol, $orderDir);
+
+            // Pagination
+            $builder->limit($length, $start);
+
+            $query = $builder->get();
+            $data = $query->getResultArray();
+
+            return $this->response->setJSON([
+                'draw' => $draw,
+                'recordsTotal' => $totalRecords,
+                'recordsFiltered' => $recordsFiltered,
+                'data' => $data,
+            ]);
+        } catch (\Exception $e) {
+            return $this->response->setJSON([
+                'error' => $e->getMessage(),
+            ]);
+        }
+    }
     // search for accommodation
     public function search_accommodation() {
+        
         $data = [
             'title' => 'Accommodation | Admin'
         ];

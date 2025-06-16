@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class AccommodationModel extends Model
 {
     protected $DBGroup          = 'vantripper_db';
-    protected $table            = 'accommodations';
+    protected $table            = 'accommodation';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';

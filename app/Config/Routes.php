@@ -64,8 +64,11 @@ $routes->group('/admin/', function($routes) {
     $routes->group('accommodation/', function($routes) {
         // create / add accommodation
         $routes->match(['get', 'post'], 'create', 'Admin\AccommodationController::create_accommodation');
-        // list of accommodation
+        // list of accommodation && Ajax 
         $routes->get('list', 'Admin\AccommodationController::list_accommodation');
+        $routes->get('fetch_accommodation', 'Admin\AccommodationController::fetch_accommodation');
+        // $routes->post('delete_accommodation/(:any)', 'Admin\AccommodationController::delete_accommodation/$1');
+
         // $routes->get('edit', 'Admin\AccommodationController::list_accommodation');
         // $routes->get('delete', 'Admin\AccommodationController::list_accommodation');
         $routes->get('search', 'Admin\AccommodationController::search_accommodation');
