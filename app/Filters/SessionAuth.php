@@ -6,7 +6,7 @@ use CodeIgniter\Filters\FilterInterface;
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
 
-class AdminAuth implements FilterInterface
+class SessionAuth implements FilterInterface
 {
     /**
      * Do whatever processing this filter needs to do.
@@ -25,31 +25,16 @@ class AdminAuth implements FilterInterface
      */
     public function before(RequestInterface $request, $arguments = null)
     {
-        $uri_segment = service('uri')->getSegment(1);
-
         if(session()->has('user_id')) {
-            if($uri_segment === 'login') {
-                return redirect()->to('/admin/dashboard');
+            // redirect to login
+            if(session()->has('administrator_account')) {
+                return redirect()->to('/login');
             }
 
-            if($arguments) {
-                if($arguments[0] !== 'Admin') {
-                    return redirect()->to('/page_not_found');
-                }
-                if($arguments[0] !== 'Manager') {
-    
-                }
-                if($arguments[0] !== 'Staff') {
-    
-                }
-                if($arguments[0] !== 'Intern') {
-    
-                }
+            // redirect to timetracker
+            if(session()->has('time_tracker_account')) {
+                return redirect()->to('/timetracker/login');
             }
-        }
-
-        if(!session()->has('user_id') && $uri_segment === 'admin') {
-            return redirect()->to('/');
         }
     }
 

@@ -177,11 +177,11 @@ class AccommodationController extends BaseController {
             ]);
         }
     }
+
     // search for accommodation
     public function search_accommodation() {
-        
         $data = [
-            'title' => 'Accommodation | Admin'
+            'title' => 'Accommodation | Admin',
         ];
         return view('admin/pages/accommodation/search_accommodation', $data);
     }

@@ -19,7 +19,7 @@ $routes->group('/', function($routes) {
 
 ## ================================================================================================================================
 ## ----- HOME CONTROLLER ----- ##
-$routes->group('/', ['filter' => 'admin_auth'], function($routes) {
+$routes->group('/',  ['filter' => 'session_auth'], function($routes) {
     $routes->get('', 'HomeController::home');
     $routes->get('home', 'HomeController::home');
 
@@ -31,17 +31,17 @@ $routes->group('/', ['filter' => 'admin_auth'], function($routes) {
 
 ## ================================================================================================================================
 ## ----- LOGIN CONTROLLER ----- ##
-$routes->match(['get', 'post'], '/login', 'LoginController::login');
+$routes->match(['get', 'post'], '/login', 'LoginController::login', ['filter' => 'admin_auth']);
 ## ----- LOGOUT CONTROLLER ----- ##
 $routes->get('/logout', 'LogoutController::logout');
 
 ## ================================================================================================================================
 ## ----- ADMIN CONTROLLERS ----- ##
-$routes->group('/admin/', function($routes) {
+$routes->group('/admin/', ['filter' => 'admin_auth'], function($routes) {
     // dashboard
     $routes->get('dashboard', 'Admin\DashboardController::dashboard');
 
-    ## user-management
+    ## User Management
     $routes->group('user-management/', function($routes) {
         // display users in table
         $routes->get('', 'Admin\UserManagementController::users');
@@ -60,7 +60,7 @@ $routes->group('/admin/', function($routes) {
         $routes->post('create', 'Admin\UserManagementController::create_user');
     });
 
-    ## accommodation management
+    ## Accommodation Management
     $routes->group('accommodation/', function($routes) {
         // create / add accommodation
         $routes->match(['get', 'post'], 'create', 'Admin\AccommodationController::create_accommodation');
@@ -68,9 +68,15 @@ $routes->group('/admin/', function($routes) {
         $routes->get('list', 'Admin\AccommodationController::list_accommodation');
         $routes->get('fetch_accommodation', 'Admin\AccommodationController::fetch_accommodation');
         // $routes->post('delete_accommodation/(:any)', 'Admin\AccommodationController::delete_accommodation/$1');
-
         // $routes->get('edit', 'Admin\AccommodationController::list_accommodation');
         // $routes->get('delete', 'Admin\AccommodationController::list_accommodation');
         $routes->get('search', 'Admin\AccommodationController::search_accommodation');
+    });
+
+    ## CRM Management
+    $routes->group('crm/', function($routes) {
+        // terms management
+        $routes->match(['get', 'post'], 'terms', 'Admin\TermsController::terms_page');
+        $routes->get('terms/delete/(:num)', 'Admin\TermsController::delete_terms/$1');
     });
 });

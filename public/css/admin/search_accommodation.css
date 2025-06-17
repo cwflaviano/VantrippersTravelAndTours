@@ -1,0 +1,123 @@
+.pagination a {
+    color: #333;
+    padding: 8px 16px;
+    text-decoration: none;
+    border: 1px solid #ddd;
+    margin: 0 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.pagination a:hover {
+    background-color: #f2f2f2;
+    color: #000;
+}
+
+.pagination a.active {
+    background-color: #4CAF50;
+    color: white;
+    border: 1px solid #4CAF50;
+}
+
+.pagination {
+    white-space: nowrap;
+    overflow-x: auto;
+}
+
+@media (max-width: 576px) {
+    .pagination {
+        flex-wrap: wrap;
+    }
+}
+
+.btn-group .btn.active {
+    text-decoration: underline;
+    color: white;
+    background-color: rgb(235 159 69)
+}
+
+/* Accordion */
+.custom-accordion {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.accordion-header {
+    background: rgb(43, 43, 43);
+    color: white;
+    padding: 10px 15px;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.3s ease;
+}
+
+.accordion-body {
+    display: none;
+    padding: 15px;
+    background: white;
+    border-top: 1px solid #ddd;
+    text-align: justify;
+}
+
+.accordion-item.active .accordion-body {
+    display: block;
+}
+
+.accordion-item.active .accordion-header {
+    background: rgb(40, 40, 40);
+}
+
+.accordion-header i {
+    transition: transform 0.3s ease;
+}
+
+.accordion-item.active .accordion-header i {
+    transform: rotate(180deg);
+}
+
+
+.sidebar-dark-light .nav-sidebar>.nav-item>.nav-link.active,
+.sidebar-light-light .nav-sidebar>.nav-item>.nav-link.active {
+    background-color: rgb(235 159 69);
+}
+
+.sidebar-dark-light .nav-sidebar>.nav-item>.nav-link.active,
+.sidebar-light-light .nav-sidebar>.nav-item>.nav-link.active {
+    color: white;
+}
+
+.small-badge {
+    font-size: 0.6rem;
+    padding: 2px 5px;
+}
+
+.card.hotel-card {
+    border: 2px solid #ddd;
+    border-radius: 10px;
+}
+
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.8);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ribbon {
+    transform: rotate(-45deg);
+    transform-origin: top left;
+    left: -35px;
+    top: 15px;
+    width: 150px;
+    text-align: center;
+}

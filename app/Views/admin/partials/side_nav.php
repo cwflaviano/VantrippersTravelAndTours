@@ -60,7 +60,6 @@
                         <p>List of Accommodation</p>
                     </a>
                 </li>
-
                 <li class="nav-item">
                     <a href="<?= base_url('/admin/accommodation/search') ?>" class="nav-link <?= ($seg3 == 'search') ? 'active' : '' ?>">
                     <i class="nav-icon fas fa-search"></i>
@@ -70,6 +69,146 @@
 
                 <!-- CRM LINKS -->
                 <li class="nav-header">CRM</li>
+                <li class="nav-item <?= ($seg3 == 'crm' || $seg3 == 'terms' || $seg3 == 'customer_list.php' || $seg3 == 'terms.php') ? 'menu-open' : '' ?>">
+                    <a href="#" class="nav-link <?= ($seg3 == 'terms' || $seg3 == 'invoice_package.php' || $seg3 == 'customer_list.php' || $seg3 == 'terms.php') ? 'active' : '' ?>">
+                        <i class="nav-icon fas fa-file-invoice-dollar"></i>
+                            <p id="sidebar-text">
+                                Sales
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="<?= base_url('/admin/crm/terms') ?>" class="nav-link <?= $seg3 == 'terms' ? 'active' : '' ?>">
+                                <i class="far fa-circle nav-icon"></i>
+
+                                <p id="sidebar-text">
+                                    Terms
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="invoice_package.php" class="nav-link <?= $seg3 == 'invoice_package.php' ? 'active' : '' ?>">
+                                <i class="far fa-circle nav-icon"></i>
+
+                                <p id="sidebar-text">
+                                    Packages
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="create_invoice.php" class="nav-link <?= $seg3 == 'create_invoice.php' ? 'active' : '' ?>">
+                                <i class="far fa-circle nav-icon"></i>
+
+                                <p id="sidebar-text">
+                                    Invoices
+                                </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#" class="nav-link <?= $seg3 == '#' ? 'active' : '' ?>">
+                                <i class="far fa-circle nav-icon"></i>
+
+                                <p id="sidebar-text">
+                                    Receipts
+                                </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="customer_list.php" class="nav-link <?= $seg3 == 'customer_list.php' ? 'active' : '' ?>">
+                                <i class="far fa-circle nav-icon"></i>
+
+                                <p id="sidebar-text">
+                                    Customers
+                                </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="iteneraries.php" class="nav-link <?= $seg3 == 'iteneraries.php' ? 'active' : '' ?>">
+                                <i class="far fa-circle nav-icon"></i>
+
+                                <p id="sidebar-text">
+                                    Iteneraries
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item <?= $seg2 ? 'crm' : '' ?>">
+                    <a href="#" class="nav-link <?= $seg2 ? 'active' : '' ?>">
+                        <i class="nav-icon fas fa-route"></i>
+                        <p id="sidebar-text">
+                            Tours Management
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="luzon_joiners.php" class="nav-link <?= $seg3 == 'luzon_joiners.php' ? 'active' : '' ?>">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Joiners Luzon Tours</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="luzon_exclusive.php" class="nav-link <?= $seg3 == 'luzon_exclusive.php' ? 'active' : '' ?>">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Exclusive Luzon Tours</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="domestic_tours.php" class="nav-link <?= $seg3 == 'domestic_tours.php' ? 'active' : '' ?>">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Domestic Tours</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="completed_tours.php" class="nav-link <?= $seg3 == 'completed_tours.php' ? 'active' : '' ?>">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Completed Tours</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="cancelled_tours.php" class="nav-link <?= $seg3 == 'cancelled_tours.php' ? 'active' : '' ?>">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Cancelled | Rescheduled Tours</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item <?= ($seg3 == 'van_management.php' || $seg3 == 'van_bookings.php') ? 'menu-open' : '' ?>">
+                    <a href="#" class="nav-link <?= ($seg3 == 'van_management.php' || $seg3 == 'van_bookings.php') ? 'active' : '' ?>">
+                        <i class="nav-icon fas fa-shuttle-van"></i>
+                        <p id="sidebar-text">
+                            Van Rentals
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="van_management.php" class="nav-link <?= $seg3 == 'van_management.php' ? 'active' : '' ?>">
+                                <i class="far fa-circle nav-icon"></i>
+
+                                <p id="sidebar-text">
+                                    Add New Van
+                                </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="van_bookings.php" class="nav-link <?= $seg3 == 'van_bookings.php' ? 'active' : '' ?>">
+                                <i class="far fa-circle nav-icon"></i>
+
+                                <p id="sidebar-text">
+                                    Van Rental Bookings
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
                 <li class="nav-item <?= ($seg2 == 'gallery-admin.php' || $seg2 == 'faq_admin.php') ? 'menu-open' : '' ?>">
                     <a href="#" class="nav-link <?= ($seg2 == 'gallery-admin.php' || $seg2 == 'faq_admin.php') ? 'active' : '' ?>">
                         <i class="nav-icon fas fa-images"></i>

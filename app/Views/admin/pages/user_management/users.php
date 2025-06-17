@@ -170,6 +170,7 @@
 
 <!-- js -->
 <?= $this->section('js') ?>
+    <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
     <script src="<?= base_url('js/admin/user.js') ?>?v=<?= time() ?>"></script>
     <script>
         const reload = "<?= base_url('/admin/user-management') ?>";

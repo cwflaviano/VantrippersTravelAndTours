@@ -3,6 +3,7 @@
 namespace Config;
 
 use App\Filters\AdminAuth;
+use App\Filters\SessionAuth;
 use CodeIgniter\Config\Filters as BaseFilters;
 use CodeIgniter\Filters\Cors;
 use CodeIgniter\Filters\CSRF;
@@ -35,7 +36,10 @@ class Filters extends BaseFilters
         'forcehttps'    => ForceHTTPS::class,
         'pagecache'     => PageCache::class,
         'performance'   => PerformanceMetrics::class,
-        'admin_auth'    => AdminAuth::class,
+        
+        // CUSTOM AUTHENTICATION FILTER FOR ROUTES
+        'session_auth'  => SessionAuth::class, // check if there is login session
+        'admin_auth'    => AdminAuth::class, // admin session authentication
     ];
 
     /**
