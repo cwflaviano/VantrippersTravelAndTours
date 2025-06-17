@@ -3,14 +3,6 @@
 <?= $this->extend('layouts/admin_layout') ?>
 
 <?= $this->section('css') ?>
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.4.1/css/responsive.bootstrap5.min.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
-    <script src="https://cdn.datatables.net/responsive/2.4.1/js/dataTables.responsive.min.js"></script>
-    <script src="https://cdn.datatables.net/responsive/2.4.1/js/responsive.bootstrap5.min.js"></script>
-
     <link rel="stylesheet" href="<?= base_url('css/admin/list_accommodation.css') ?>?v=<? time() ?>">
 <?= $this->endSection() ?>
 
@@ -81,9 +73,26 @@
 
 
 <!-- Modals -->
-<?= $this->include('admin/pages/accommodation/list_accommodation_modals') ?>
+<?= $this->include('admin/partials/modals/list_accommodation_modals') ?>
 
 <!-- js -->
 <?= $this->section('js') ?>
     <script src="<?= base_url('js/admin/list_accommodation.js')?>?v=<?= time() ?>"></script>
+    <script>
+        const fetch_data = "<?= base_url('/admin/accommodation/list/fetch')?>";
+        $(document).ready(function() {
+            <?php if (session()->has('success')): ?>
+                Swal.fire({
+                    title: 'Success!',
+                    text: '<?= esc(session()->get('success')); ?>',
+                    icon: 'success',
+                    confirmButtonText: 'OK'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = 'accommodation_list.php';
+                    }
+                });
+            <?php endif; ?>
+        });
+    </script>
 <?= $this->endSection() ?>

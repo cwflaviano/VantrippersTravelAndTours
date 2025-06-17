@@ -1,7 +1,11 @@
-<!-- GET THE SECOND SEGMENT OF THE BASE URL = ex. https://localhost/project_name/public/segment1/segment2/segment3/ -->
-<?php $seg1 = service('uri')->getSegment(1); ?> 
-<?php $seg2 = service('uri')->getSegment(2); ?> 
-<?php $seg3 = service('uri')->getSegment(3); ?> 
+<!-- GET THE SECOND SEGMENT OF THE BASE URL = ex. https://localhost/project_name/public/segment1/segment2/segment3/segment4/ -->
+<?php 
+    $totalSegments = service('uri')->getTotalSegments();
+    $seg1 = $totalSegments >= 1 ? service('uri')->getSegment(1) : null;
+    $seg2 = $totalSegments >= 2 ? service('uri')->getSegment(2) : null;
+    $seg3 = $totalSegments >= 3 ? service('uri')->getSegment(3) : null;
+    $seg4 = $totalSegments >= 4 ? service('uri')->getSegment(4) : null;
+?> 
 
 <!-- NAVIGATION SIDE BAR -->
 <aside class="main-sidebar sidebar-light-light elevation-4">
@@ -26,10 +30,12 @@
                     </a>
                 </li>
 
+
+
                 <!-- USERS LINKS -->
                 <li class="nav-header">User's</li>
-                <li class="nav-item <?= ($seg2 == 'user-management' ||  $seg2 == 'view_users.php') ? 'menu-open' : '' ?>">
-                    <a href="#" class="nav-link <?= ($seg2 == 'user-management' || $seg2 == 'view_users.php') ? 'active' : '' ?>">
+                <li class="nav-item <?= ($seg2 == 'user-management') ? 'menu-open' : '' ?>">
+                    <a href="#" class="nav-link <?= ($seg2 == 'user-management') ? 'active' : '' ?>">
                         <i class="nav-icon fas fa-users-cog"></i>
                         <p id="sidebar-text">
                             User Management
@@ -38,13 +44,15 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="<?= base_url('/admin/user-management') ?>" class="nav-link <?= ($seg2 == 'user-management' ||  $seg2 === 'view_users.php') ? 'active' : '' ?>">
+                            <a href="<?= base_url('/admin/user-management/users') ?>" class="nav-link <?= ($seg3 == 'users') ? 'active' : '' ?>">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Add New User</p>
                             </a>
                         </li>   
                     </ul>
                 </li>
+
+
 
                 <!-- HOTEL MANAGEMENT LINKS -->
                 <li class="nav-header">Hotel Management</li>
@@ -67,10 +75,20 @@
                     </a>
                 </li>
 
+
+
                 <!-- CRM LINKS -->
                 <li class="nav-header">CRM</li>
-                <li class="nav-item <?= ($seg3 == 'crm' || $seg3 == 'terms' || $seg3 == 'customer_list.php' || $seg3 == 'terms.php') ? 'menu-open' : '' ?>">
-                    <a href="#" class="nav-link <?= ($seg3 == 'terms' || $seg3 == 'invoice_package.php' || $seg3 == 'customer_list.php' || $seg3 == 'terms.php') ? 'active' : '' ?>">
+                <li class="nav-item <?= $seg3 == 'sales' ? 'menu-open' : '' ?>">
+                    <a href="#" class="nav-link 
+                                <?= ( $seg4 == 'terms' || 
+                                      $seg4 == 'packages' || 
+                                      $seg4 == 'invoices' || 
+                                      $seg4 == 'receipts' ||
+                                      $seg4 == 'customers' ||
+                                      $seg4 == 'iteneraries' 
+                                    ) ? 'active' : '' 
+                                ?>">
                         <i class="nav-icon fas fa-file-invoice-dollar"></i>
                             <p id="sidebar-text">
                                 Sales
@@ -79,7 +97,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="<?= base_url('/admin/crm/terms') ?>" class="nav-link <?= $seg3 == 'terms' ? 'active' : '' ?>">
+                            <a href="<?= base_url('/admin/crm/sales/terms') ?>" class="nav-link <?= $seg4 == 'terms' ? 'active' : '' ?>">
                                 <i class="far fa-circle nav-icon"></i>
 
                                 <p id="sidebar-text">
@@ -88,7 +106,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="invoice_package.php" class="nav-link <?= $seg3 == 'invoice_package.php' ? 'active' : '' ?>">
+                            <a href="<?= base_url('/admin/crm/sales/packages') ?>" class="nav-link <?= $seg4 == 'packages' ? 'active' : '' ?>">
                                 <i class="far fa-circle nav-icon"></i>
 
                                 <p id="sidebar-text">
@@ -97,7 +115,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="create_invoice.php" class="nav-link <?= $seg3 == 'create_invoice.php' ? 'active' : '' ?>">
+                            <a href="create_invoice.php" class="nav-link <?= $seg4 == 'create_invoice.php' ? 'active' : '' ?>">
                                 <i class="far fa-circle nav-icon"></i>
 
                                 <p id="sidebar-text">
@@ -107,7 +125,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="#" class="nav-link <?= $seg3 == '#' ? 'active' : '' ?>">
+                            <a href="#" class="nav-link <?= $seg4 == '#' ? 'active' : '' ?>">
                                 <i class="far fa-circle nav-icon"></i>
 
                                 <p id="sidebar-text">
@@ -117,7 +135,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="customer_list.php" class="nav-link <?= $seg3 == 'customer_list.php' ? 'active' : '' ?>">
+                            <a href="customer_list.php" class="nav-link <?= $seg4 == 'customer_list.php' ? 'active' : '' ?>">
                                 <i class="far fa-circle nav-icon"></i>
 
                                 <p id="sidebar-text">
@@ -127,7 +145,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="iteneraries.php" class="nav-link <?= $seg3 == 'iteneraries.php' ? 'active' : '' ?>">
+                            <a href="iteneraries.php" class="nav-link <?= $seg4 == 'iteneraries.php' ? 'active' : '' ?>">
                                 <i class="far fa-circle nav-icon"></i>
 
                                 <p id="sidebar-text">
@@ -137,8 +155,11 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item <?= $seg2 ? 'crm' : '' ?>">
-                    <a href="#" class="nav-link <?= $seg2 ? 'active' : '' ?>">
+
+
+
+                <li class="nav-item <?= $seg3 ? 'tour-management' : '' ?>">
+                    <a href="#" class="nav-link <?= $seg2 == 'tour-management' ? 'active' : '' ?>">
                         <i class="nav-icon fas fa-route"></i>
                         <p id="sidebar-text">
                             Tours Management

@@ -95,3 +95,7 @@
 <?= $this->section('modals') ?>
 <!-- Modal includes should be place here -->
 <?= $this->endSection() ?>
+
+
+<?= $this->section('js') ?>
+<?= $this->endSection() ?>

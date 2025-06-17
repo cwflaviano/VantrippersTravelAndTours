@@ -113,7 +113,7 @@ class AccommodationController extends BaseController {
     }
 
     ## fetch accommodation list and send as json
-    public function fetch_accommodation() {
+    public function fetch_data() {
         try {
             $db = Database::connect('vantripper_db');
             $builder = $db->table('accommodation');

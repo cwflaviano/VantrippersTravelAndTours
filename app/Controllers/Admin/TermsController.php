@@ -29,7 +29,7 @@ class TermsController extends BaseController
             'title' => 'Terms Management | Admin',
             'terms' => $terms
         ];
-        return view('admin/pages/crm/terms/terms', $data);
+        return view('admin/pages/crm/sales/terms/terms', $data);
     }
 
     ## delete a term by id

@@ -1,0 +1,54 @@
+/* DataTables Pagination styles */
+.dataTables_wrapper .dataTables_paginate {
+    padding-top: 10px;
+    text-align: right;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    padding: 0.5em 1em;
+    margin-left: 5px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    background-color: #f8f9fa;
+    color: rgb(35 119 153) !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+    background-color: rgb(226, 140, 47);
+    color: white !important;
+    border-color: rgb(232, 138, 66);
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover:not(.current) {
+    background-color: #e9ecef;
+    color: rgb(41, 37, 33) !important;
+    border-color: #dee2e6;
+}
+
+@media screen and (max-width: 767px) {
+    .dataTables_wrapper .dataTables_paginate {
+        text-align: center;
+        margin-top: 15px;
+    }
+}
+
+
+.sidebar-dark-light .nav-sidebar>.nav-item>.nav-link.active,
+.sidebar-light-light .nav-sidebar>.nav-item>.nav-link.active {
+    background-color: rgb(235, 159, 69);
+    color: white;
+}
+
+.modal-body {
+    max-height: calc(100vh - 200px);
+    overflow-y: auto;
+    white-space: normal;
+    word-break: break-word;
+    text-align: justify;
+    padding-right: 15px;
+}
+
+/* target the 6th column (Price per Head) and prepend “₱ ” */
+#example1 tbody td:nth-child(7)::before {
+    content: "₱ ";
+}

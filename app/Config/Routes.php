@@ -44,7 +44,7 @@ $routes->group('/admin/', ['filter' => 'admin_auth'], function($routes) {
     ## User Management
     $routes->group('user-management/', function($routes) {
         // display users in table
-        $routes->get('', 'Admin\UserManagementController::users');
+        $routes->get('users', 'Admin\UserManagementController::users');
         // view user
         $routes->get('view/(:any)', 'Admin\UserManagementController::view_user/$1');
         // archived user
@@ -66,17 +66,31 @@ $routes->group('/admin/', ['filter' => 'admin_auth'], function($routes) {
         $routes->match(['get', 'post'], 'create', 'Admin\AccommodationController::create_accommodation');
         // list of accommodation && Ajax 
         $routes->get('list', 'Admin\AccommodationController::list_accommodation');
-        $routes->get('fetch_accommodation', 'Admin\AccommodationController::fetch_accommodation');
+        $routes->get('list/fetch', 'Admin\AccommodationController::fetch_data');
         // $routes->post('delete_accommodation/(:any)', 'Admin\AccommodationController::delete_accommodation/$1');
         // $routes->get('edit', 'Admin\AccommodationController::list_accommodation');
         // $routes->get('delete', 'Admin\AccommodationController::list_accommodation');
         $routes->get('search', 'Admin\AccommodationController::search_accommodation');
     });
 
-    ## CRM Management
+    ## CRM 
     $routes->group('crm/', function($routes) {
-        // terms management
-        $routes->match(['get', 'post'], 'terms', 'Admin\TermsController::terms_page');
-        $routes->get('terms/delete/(:num)', 'Admin\TermsController::delete_terms/$1');
+        ## sales
+        $routes->group('sales/', function($routes) {
+            // terms management
+            $routes->match(['get', 'post'], 'terms', 'Admin\TermsController::terms_page');
+            $routes->get('terms/delete/(:num)', 'Admin\TermsController::delete_terms/$1');
+    
+            // packages management
+            $routes->get('packages', 'Admin\PackagesController::packages');
+            $routes->match(['get', 'post'],'packages/fetch', 'Admin\PackagesController::fetch_data');
+            $routes->post('packages/create', 'Admin\PackagesController::create_package');
+            $routes->get('packages/delete/(:num)', 'Admin\PackagesController::delete_package/$1');
+        });
+
+        ## tours management
+        $routes->group('tour-management/', function($routes) {
+
+        });
     });
 });

@@ -12,7 +12,11 @@
     <title><?= $title ?? "Administrator Page" ?></title>
 
     <!-- Global css libraries and custom css -->
-    <?= $this->include('admin/partials/cdn/cdn_css') ?>
+    <?= $this->include('admin/partials/cdn/css_cdn') ?>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="<?= base_url('css/admin/sidebar.css') ?>?v=<?= time() ?>">
+    <link rel="stylesheet" href="<?= base_url('css/admin/all.css') ?>?v=<?= time() ?>">
 
     <!-- render css libraries and css files-->
     <?= $this->renderSection('css_libraries') ?>
@@ -39,7 +43,8 @@
     <?= $this->include('admin/partials/logout_modal') ?>
 
     <!-- Global js libraries and custom js -->
-    <?= $this->include('admin/partials/cdn/cdn_js') ?>
+    <?= $this->include('admin/partials/cdn/js_cdn') ?>
+    <?= $this->include('admin/partials/cdn/js_cdn_datatables') ?>
 
     
     <!-- render js libraries and files -->
