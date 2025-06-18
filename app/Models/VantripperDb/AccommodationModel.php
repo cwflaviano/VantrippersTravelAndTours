@@ -50,4 +50,8 @@ class AccommodationModel extends Model
 
     // Dates
     protected $useTimestamps = true;
+
+
+
+    
 }

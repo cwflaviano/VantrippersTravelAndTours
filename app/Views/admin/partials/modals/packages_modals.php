@@ -52,7 +52,7 @@
 <div class="modal fade" id="createModal" tabindex="-1" aria-labelledby="createModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
     <div class="modal-dialog modal-xl modal-dialog-centered"><!-- make it large to fit two columns comfortably -->
         <div class="modal-content">
-            <form method="POST" action="invoice_package.php">
+            <form method="POST" action="<?= base_url('/admin/crm/sales/packages/create')?>">
                 <input type="hidden" name="action" value="create">
                 <div class="modal-header bg-primary text-white">
                     <h5 class="modal-title" id="createModalLabel">Add New Package</h5>

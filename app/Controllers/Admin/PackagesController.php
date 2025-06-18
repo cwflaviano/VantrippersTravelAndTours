@@ -63,12 +63,45 @@ class PackagesController extends BaseController
             if ($data['sku'] && $data['items'] && $data['price'] > 0) {
                 $invoicePackageModel->insert($data);
                 session()->setFlashdata('success', 'New package created successfully!');
-                return redirect()->to('/invoice_package');
+                return redirect()->to('/admin/crm/sales/packages');
             } else {
                 session()->setFlashdata('error', 'Please fill in all required fields correctly.');
                 return redirect()->back();
             }
         }
+    }
+
+    ## edit pacakge
+    public function edit_package($id) {
+
+        if(!$id) return redirect()->back();
+
+        $invoicePackageModel = new InvoicePackageModel();
+        if($id && $this->request->getPost('action') && $this->request->getMethod() === 'POST') {
+            $sku      = trim($this->request->getPost('sku'));
+            $category = trim($this->request->getPost('category'));
+            $items    = trim($this->request->getPost('items'));
+            $details  = trim($this->request->getPost('item_full_details'));
+            $price    = intval($this->request->getPost('price'));
+            $quantity = intval($this->request->getPost('quantity'));
+
+            if($sku && $category && $items && $price > 0) {
+                $invoicePackageModel->db->query("UPDATE invoice_package SET sku = ?, quantity = ?,category = ?, items = ?, item_full_details = ?, price = ? WHERE id = ?", 
+                                                 [$sku, $quantity ,$category, $items, $details, $price, $id]);
+                return redirect()->back()->with('success', 'updated successfully.');
+            }
+            else {
+                return redirect()->back()->with('error', 'Please fill in all required fields correctly.');
+            }
+        }
+
+        $package = $invoicePackageModel->db->query("SELECT * FROM invoice_package WHERE id = ?", [$id])->getRowArray();
+        $data = [
+            'title' => 'Edit Pacakge Invoice | Admin',
+            'id' => $id,
+            'package' => $package
+        ];
+        return view('admin/pages/crm/sales/packages/edit_invoice_package', $data);
     }
 
     // Handle Delete

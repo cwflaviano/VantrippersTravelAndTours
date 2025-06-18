@@ -51,7 +51,6 @@
     <?= $this->renderSection('js_libraries') ?>
     <?= $this->renderSection('js') ?>
     
-    <script>$.widget.bridge('uibutton', $.ui.button)</script>
     <script> 
         $(document).ready(function() {
             $('.nav-link[data-widget="pushmenu"]').on('click', function() {

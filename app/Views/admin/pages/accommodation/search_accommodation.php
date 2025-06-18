@@ -14,7 +14,7 @@
 <?= $this->endSection() ?>
 
 <?= $this->section('modals') ?>
-    <?= $this->include('admin/pages/accommodation/search_accommodation_modal')?>
+    <?= $this->include('admin/partials/modals/search_accommodation_modal')?>
 <?= $this->endSection() ?>
 
 

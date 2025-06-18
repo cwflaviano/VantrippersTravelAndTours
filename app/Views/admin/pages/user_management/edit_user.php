@@ -16,7 +16,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <a href="<?= base_url('/admin/user-management') ?>" class="btn btn-outline-secondary"><i class="fas fa-arrow-left"></i> Back to list</a>
+                        <a href="<?= base_url('/admin/user-management/users') ?>" class="btn btn-outline-secondary"><i class="fas fa-arrow-left"></i> Back to list</a>
                     </div>
                 </div>
             </div>

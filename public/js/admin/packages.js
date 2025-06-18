@@ -5,6 +5,7 @@ $(document).ready(function() {
         processing: true,
         serverSide: true,
         responsive: true,
+        // ajax: "http://localhost/VantrippersTravelAndTours/public/admin/crm/sales/packages/fetch",
         ajax: fetch_data,
         order: [[0, 'desc']],
         scrollX: true,
@@ -34,8 +35,8 @@ $(document).ready(function() {
                 data: null,
                 orderable: false,
                 render: function(data, type, row) {
-                    return '<a href="'+ "edit" + row.id + '" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i> Edit</a> ' +
-                           '<a href="'+ "delete" + row.id + '" class="btn btn-danger btn-sm delete-link"><i class="fas fa-trash"></i> Delete</a>';
+                    return '<a href="'+ edit_pacakage + row.id + '" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i> Edit</a> ' +
+                           '<a href="'+ delete_pacakage + row.id + '" class="btn btn-danger btn-sm delete-link"><i class="fas fa-trash"></i> Delete</a>';
                 }
             }
         ]

@@ -26,8 +26,9 @@ class InvoicePackageModel extends Model
   
     protected bool $allowEmptyInserts = true;
     protected bool $updateOnlyChanged = true;
-
+    
     // Dates
+    protected $updatedField = '';
     protected $useTimestamps = true;
 
 

@@ -79,7 +79,7 @@
 <?= $this->section('js') ?>
     <script src="<?= base_url('js/admin/list_accommodation.js')?>?v=<?= time() ?>"></script>
     <script>
-        const fetch_data = "<?= base_url('/admin/accommodation/list/fetch')?>";
+        const fetch_data = "<?= base_url('/admin/accommodation/list/fetch') ?>";
         $(document).ready(function() {
             <?php if (session()->has('success')): ?>
                 Swal.fire({

@@ -67,6 +67,8 @@ $routes->group('/admin/', ['filter' => 'admin_auth'], function($routes) {
         // list of accommodation && Ajax 
         $routes->get('list', 'Admin\AccommodationController::list_accommodation');
         $routes->get('list/fetch', 'Admin\AccommodationController::fetch_data');
+        $routes->get('list/delete/(:num)', 'Admin\AccommodationController::delete/$1');
+
         // $routes->post('delete_accommodation/(:any)', 'Admin\AccommodationController::delete_accommodation/$1');
         // $routes->get('edit', 'Admin\AccommodationController::list_accommodation');
         // $routes->get('delete', 'Admin\AccommodationController::list_accommodation');
@@ -86,6 +88,7 @@ $routes->group('/admin/', ['filter' => 'admin_auth'], function($routes) {
             $routes->match(['get', 'post'],'packages/fetch', 'Admin\PackagesController::fetch_data');
             $routes->post('packages/create', 'Admin\PackagesController::create_package');
             $routes->get('packages/delete/(:num)', 'Admin\PackagesController::delete_package/$1');
+            $routes->match(['get', 'post'], 'packages/edit/(:num)', 'Admin\PackagesController::edit_package/$1');
         });
 
         ## tours management

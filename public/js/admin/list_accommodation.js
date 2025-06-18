@@ -4,43 +4,23 @@ $(document).ready(function() {
         "processing": true,
         "serverSide": true,
         "responsive": true,
-        "ajax": {
-            url: "http://localhost/VantrippersTravelAndTours/public/admin/crm/sales/packages/fetch", // Relative to current file
-            type: 'POST',
-            data: function(d) {
-                d.csrf_token_name = '<?php echo csrf_token(); ?>';
-                d.csrf_token_value = '<?php echo csrf_hash(); ?>';
-            },
-            error: function(xhr, error, thrown) {
-                console.log('AJAX Error:', xhr.responseText, error, thrown);
-                alert('Error loading data: ' + error);
-            }
-        },
+        "ajax": "http://localhost/VantrippersTravelAndTours/public/admin/accommodation/list/fetch",
         "order": [[0, "desc"]],
         "scrollX": true,
-        "columns": [{
-                "data": "id"
-            },
-            {
-                "data": "place"
-            },
-            {
-                "data": "email"
-            },
-            {
-                "data": "contact"
-            },
+        "columns": [
+            { "data": "id" },
+            { "data": "place" },
+            { "data": "email" },
+            { "data": "contact" },
             {
                 "data": "description",
                 "render": function(data, type, row) {
-                    var maxLength = 10;
                     return '<a href="#" onclick="showFullDescription(event, \'' + encodeURIComponent(data) + '\')" class="btn btn-sm btn-outline-secondary"><i class="fas fa-eye"></i> View</a>';
                 }
             },
             {
                 "data": "remarks",
                 "render": function(data, type, row) {
-                    var maxLength = 10;
                     return '<a href="#" onclick="showFullRemarks(event, \'' + encodeURIComponent(data) + '\')" class="btn btn-sm btn-outline-secondary"><i class="fas fa-eye"></i> View</a>';
                 }
             },
@@ -50,12 +30,8 @@ $(document).ready(function() {
                     return '<a href="' + data + '" target="_blank">Website</a>';
                 }
             },
-            {
-                "data": "hotel_name"
-            },
-            {
-                "data": "room_type"
-            },
+            { "data": "hotel_name" },
+            { "data": "room_type" },
             {
                 "data": "total_rate",
                 "render": function(data, type, row) {
@@ -68,63 +44,33 @@ $(document).ready(function() {
                     return '₱' + data;
                 }
             },
-            {
-                "data": "capacity"
-            },
-            {
-                "data": "star_rating"
-            },
-            {
-                "data": "pet_friendly"
-            },
-            {
-                "data": "breakfast"
-            },
-            {
-                "data": "pool"
-            },
-            {
-                "data": "elevator"
-            },
-            {
-                "data": "function_hall"
-            },
-            {
-                "data": "beachfront"
-            },
-            {
-                "data": "distance_from"
-            },
-            {
-                "data": "distance_location"
-            },
-            {
-                "data": "area"
-            },
-            {
-                "data": "pin_location"
-            },
-            {
-                "data": "can_accommodate"
-            },
-            {
-                "data": "created_by"
-            },
-            {
-                "data": "updated_by"
-            },
+            { "data": "capacity" },
+            { "data": "star_rating" },
+            { "data": "pet_friendly" },
+            { "data": "breakfast" },
+            { "data": "pool" },
+            { "data": "elevator" },
+            { "data": "function_hall" },
+            { "data": "beachfront" },
+            { "data": "distance_from" },
+            { "data": "distance_location" },
+            { "data": "area" },
+            { "data": "pin_location" },
+            { "data": "can_accommodate" },
+            { "data": "created_by" },
+            { "data": "updated_by" },
             {
                 "data": null,
                 "orderable": false,
                 "render": function(data, type, row) {
-                    return '<a href="' + row.id + '" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i> Edit</a> ' +
-                        '<a href="' + row.id + '" class="btn btn-danger btn-sm delete-link"><i class="fas fa-trash"></i> Delete</a>';
+                    return '<a href="" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i> Edit</a> ' +
+                           '<a href="" class="btn btn-danger btn-sm delete-link"><i class="fas fa-trash"></i> Delete</a>';
                 }
             }
         ]
     });
-
-    // Delete confirmation using SweetAlert2
+// <?= base_url('accommodation/edit/') ?>' + row.id +
+// <?= base_url('accommodation/delete/') ?>' + row.id 
     $(document).on('click', '.delete-link', function(e) {
         e.preventDefault();
         var link = $(this).attr('href');
@@ -144,7 +90,6 @@ $(document).ready(function() {
     });
 });
 
-// Function to show full description in modal
 function showFullDescription(event, encodedDescription) {
     event.preventDefault();
     var fullText = decodeURIComponent(encodedDescription);
@@ -153,7 +98,6 @@ function showFullDescription(event, encodedDescription) {
     descriptionModal.show();
 }
 
-// Function to show full remarks in modal
 function showFullRemarks(event, encodedRemarks) {
     event.preventDefault();
     var fullText = decodeURIComponent(encodedRemarks);

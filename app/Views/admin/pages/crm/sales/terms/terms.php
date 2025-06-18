@@ -62,7 +62,7 @@
                                             data-details="<?= esc($term['details'], 'attr') ?>">
                                             Edit
                                         </button>
-                                        <a href="<?= base_url('/admin/crm/terms/delete/'.$term['id']) ?>"
+                                        <a href="<?= base_url('/admin/crm/sales/terms/delete/'.$term['id']) ?>"
                                             class="btn btn-sm btn-danger"
                                             onclick="return confirm('Delete this term?');">Delete</a>
                                     </td>

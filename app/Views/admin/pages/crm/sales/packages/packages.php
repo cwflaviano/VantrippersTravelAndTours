@@ -74,11 +74,9 @@
     <script src="<?= base_url('js/admin/packages.js') ?>?v=<?= time() ?>"></script>
 
     <script>
-        const fetch_data = "<?= base_url('/admin/crm/packages/fetch')?>"
-        // const create = '< ?= base_url('/admin/crm/packages/create') ?>';
-        // const edit = '< ?= base_url('/admin/crm/packages/edit') ?>';
-        // const delete = '< ?= base_url('/admin/crm/packages/delete') ?>';
-
+        const fetch_data = "<?= base_url('/admin/crm/sales/packages/fetch')?>";
+        const edit_pacakage = "<?= base_url()?>/admin/crm/sales/packages/edit/";
+        const delete_pacakage = "<?= base_url()?>/admin/crm/sales/packages/delete/";
         // Handle flashdata for success/error messages 
         <?php if (session()->has('success')): ?>
             Swal.fire({

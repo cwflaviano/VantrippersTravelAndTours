@@ -112,8 +112,19 @@ class AccommodationController extends BaseController {
         return view('admin/pages/accommodation/list_accommodation', ['title' => 'Accommodations | Admin']);
     }
 
-    ## fetch accommodation list and send as json
+
+
     public function fetch_data() {
+        
+    }
+
+
+
+
+
+
+    ## fetch accommodation list and send as json
+    public function fetch_data1() {
         try {
             $db = Database::connect('vantripper_db');
             $builder = $db->table('accommodation');

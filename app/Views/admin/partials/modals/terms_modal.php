@@ -2,7 +2,7 @@
         <div class="modal fade" id="createModal" tabindex="-1">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <form method="post" action="<?= base_url('/admin/crm/terms') ?>">
+                    <form method="post" action="<?= base_url('/admin/crm/sales/terms') ?>">
                         <div class="modal-header">
                             <h5 class="modal-title">Add Term</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
@@ -31,7 +31,7 @@
         <div class="modal fade" id="editModal" tabindex="-1">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <form method="post" action="<?= base_url('/admin/crm/terms') ?>">
+                    <form method="post" action="<?= base_url('/admin/crm/sales/terms') ?>">
                         <div class="modal-header">
                             <h5 class="modal-title">Edit Term</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
